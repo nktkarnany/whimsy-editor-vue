@@ -1,0 +1,56 @@
+:root {
+  --whimsy-black: rgb(0 0 0);
+  --whimsy-white: rgb(255 255 255);
+  --whimsy-stone-50: rgb(250 250 249);
+  --whimsy-stone-100: rgb(245 245 244);
+  --whimsy-stone-200: rgb(231 229 228);
+  --whimsy-stone-300: rgb(214 211 209);
+  --whimsy-stone-400: rgb(168 162 158);
+  --whimsy-stone-500: rgb(120 113 108);
+  --whimsy-stone-600: rgb(87 83 78);
+  --whimsy-stone-700: rgb(68 64 60);
+  --whimsy-stone-800: rgb(41 37 36);
+  --whimsy-stone-900: rgb(28 25 23);
+
+  --whimsy-highlight-default: #ffffff;
+  --whimsy-highlight-purple: #f6f3f8;
+  --whimsy-highlight-red: #fdebeb;
+  --whimsy-highlight-yellow: #fbf4a2;
+  --whimsy-highlight-blue: #c1ecf9;
+  --whimsy-highlight-green: #acf79f;
+  --whimsy-highlight-orange: #faebdd;
+  --whimsy-highlight-pink: #faf1f5;
+  --whimsy-highlight-gray: #f1f1ef;
+
+  /* --font-title: "Cal Sans", sans-serif; */
+}
+
+.dark-theme {
+  --whimsy-black: rgb(255 255 255);
+  --whimsy-white: rgb(25 25 25);
+  --whimsy-stone-50: rgb(35 35 34);
+  --whimsy-stone-100: rgb(41 37 36);
+  --whimsy-stone-200: rgb(66 69 71);
+  --whimsy-stone-300: rgb(112 118 123);
+  --whimsy-stone-400: rgb(160 167 173);
+  --whimsy-stone-500: rgb(193 199 204);
+  --whimsy-stone-600: rgb(212 217 221);
+  --whimsy-stone-700: rgb(229 232 235);
+  --whimsy-stone-800: rgb(232 234 235);
+  --whimsy-stone-900: rgb(240, 240, 241);
+
+  --whimsy-highlight-default: #000000;
+  --whimsy-highlight-purple: #3f2c4b;
+  --whimsy-highlight-red: #5c1a1a;
+  --whimsy-highlight-yellow: #5c4b1a;
+  --whimsy-highlight-blue: #1a3d5c;
+  --whimsy-highlight-green: #1a5c20;
+  --whimsy-highlight-orange: #5c3a1a;
+  --whimsy-highlight-pink: #5c1a3a;
+  --whimsy-highlight-gray: #3a3a3a;
+}
+
+/* @font-face {
+  font-family: "Cal Sans";
+  src: local("Cal Sans"), url(CalSans-SemiBold.otf) format("otf");
+} */
