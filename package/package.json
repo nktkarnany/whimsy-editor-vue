@@ -2,7 +2,7 @@
   "name": "whimsy-editor-vue",
   "version": "0.0.1",
   "author": "Ankit Karnany <ankitkarnany@gmail.com>",
-  "description": "A Rich Vue 3 component built using NaiveUI & Vercel AI SDK & OpenAI",
+  "description": "A Rich Vue 3 component built using Tiptap, Vercel AI SDK & OpenAI",
   "type": "module",
   "files": [
     "dist"
@@ -19,7 +19,7 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && vue-tsc --emitDeclarationOnly",
+    "build": "vite build && vue-tsc",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -41,6 +41,7 @@
     "@vueuse/core": "^10.7.2",
     "ai": "^2.2.31",
     "lucide-vue-next": "^0.317.0",
+    "sass": "^1.70.0",
     "tippy.js": "^6.3.7",
     "tiptap-markdown": "^0.8.9",
     "vue": "^3.3.11"

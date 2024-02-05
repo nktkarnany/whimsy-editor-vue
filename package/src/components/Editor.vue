@@ -7,22 +7,20 @@
 
 <script setup lang="ts">
 import { watchEffect, type PropType, ref, watch, provide } from "vue";
-import {
-  useEditor,
-  EditorContent,
-  JSONContent,
-  Extension,
-} from "@tiptap/vue-3";
+import { useEditor, EditorContent, Content, Extension } from "@tiptap/vue-3";
 import { EditorProps } from "@tiptap/pm/view";
 import { Editor as EditorClass } from "@tiptap/core";
 import { useStorage, useDebounceFn } from "@vueuse/core";
 import { useCompletion } from "ai/vue";
 
+// Local Imports
 import { defaultEditorContent } from "../lib/default-content";
 import { defaultExtensions } from "../components/extensions";
 import { defaultEditorProps } from "../lib/props";
 import BubbleMenu from "../components/BubbleMenu/index.vue";
 import { getPrevText } from "../lib/editor";
+
+type Format = "html" | "json";
 
 const props = defineProps({
   /**
@@ -35,22 +33,29 @@ const props = defineProps({
   },
   /**
    * Additional classes to add to the editor container.
-   * Defaults to "relative min-h-[500px] w-full max-w-screen-lg border-stone-200 bg-white p-12 px-8 sm:mb-[calc(20vh)] sm:rounded-lg sm:border sm:px-12 sm:shadow-lg".
+   * Defaults to "whimsy-editor".
    */
   className: {
     type: String,
-    default:
-      "relative min-h-[500px] w-full mx-auto max-w-screen-lg border-stone-200 bg-white p-12 px-8 sm:mb-[calc(20vh)] sm:rounded-lg sm:border sm:px-12 sm:shadow-lg",
+    default: "whimsy-editor",
   },
   /**
    * The default value to use for the editor.
    * Defaults to defaultEditorContent.
    */
   defaultValue: {
-    type: Object as PropType<JSONContent>,
+    type: Object as PropType<Content>,
     default: () => {
       return defaultEditorContent;
     },
+  },
+  /**
+   * The default format to use for the editor.
+   * Defaults to json.
+   */
+  format: {
+    type: String as PropType<Format>,
+    default: "json",
   },
   /**
    * A list of extensions to use for the editor, in addition to the default whimsy extensions.

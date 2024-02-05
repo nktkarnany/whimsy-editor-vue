@@ -1,10 +1,10 @@
 # Whimsy Vue
 
-Whimsy Editor is a vue 3 component
+Whimsy Editor Vue is a vue 3 component
 
 ## Introduction
 
-Whimsy Editor is a Notion-style WYSIWYG editor with AI-powered autocompletions.
+Whimsy Editor is a WYSIWYG editor with AI-powered autocompletions.
 
 ## Installation
 
@@ -30,13 +30,14 @@ import "whimsy-editor-vue/dist/style.css";
 | Prop              | Type        | Description                                                                                                      | Default                                                                                                                                                     |
 | ----------------- | ----------- | ---------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | completionApi     | String      | The API route to use for the OpenAI completion API.                                                              | "/api/generate"                                                                                                                                             |
-| className         | String      | Additional classes to add to the editor container.                                                               | "relative min-h-500px] w-full mx-auto max-w-screen-lg border-stone-200 bg-white p-12 px-8 sm:mb-[calc(20vh)] sm:rounded-lg sm:border sm:px-12 sm:shadow-lg" |
+| className         | String      | Additional classes to add to the editor container.                                                               | "whimsy-editor" |
 | defaultValue      | JSONContent | The default value to use for the editor.                                                                         | defaultEditorContent                                                                                                                                        |
-| extensions        | Extension[] | A list of extensions to use for the editor, in addition to the default Novel extensions.                         | []                                                                                                                                                          |
+| format            | String      | Supported formats `json` & `html`                                                                                | "json" |
+| extensions        | Extension[] | A list of extensions to use for the editor, in addition to the default whimsy extensions.                         | []                                                                                                                                                          |
 | editorProps       | EditorProps | Props to pass to the underlying Tiptap editor, in addition to the default Whimsy editor props.                    | {}                                                                                                                                                          |
 | onUpdate          | Function    | A callback function that is called whenever the editor is updated.                                               | () => {}                                                                                                                                                    |
 | onDebouncedUpdate | Function    | A callback function that is called whenever the editor is updated, but only after the defined debounce duration. | () => {}                                                                                                                                                    |
 | debounceDuration  | Number      | The duration (in milliseconds) to debounce the onDebouncedUpdate callback.                                       | 750                                                                                                                                                         |
-| storageKey        | String      | The key to use for storing the editor's value in local storage.                                                  | "whimsy\_\_content"                                                                                                                                          |
+| storageKey        | String \| Null | The key to use for storing the editor's value in local storage. For value `null` it doesn't save in local storage.  | null                                                                                                                                          |
 
 > **Note**: Make sure to define an API endpoint that matches the `completionApi` prop (default is `/api/generate`). This is needed for the AI autocompletions to work.

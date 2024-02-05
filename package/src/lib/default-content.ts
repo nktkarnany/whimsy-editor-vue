@@ -1,10 +1,12 @@
-export const defaultEditorContent = {
+import { JSONContent } from "@tiptap/vue-3";
+
+export const defaultEditorContent: JSONContent = {
   type: "doc",
   content: [
     {
       type: "heading",
       attrs: { level: 2 },
-      content: [{ type: "text", text: "Introducing Novel" }],
+      content: [{ type: "text", text: "Introducing Whimsy Editor" }],
     },
     {
       type: "paragraph",
@@ -15,18 +17,17 @@ export const defaultEditorContent = {
             {
               type: "link",
               attrs: {
-                href: "https://github.com/steven-tey/novel",
+                href: "https://github.com/nktkarnany/whimsy-editor-vue",
                 target: "_blank",
-                class:
-                  "text-stone-400 underline underline-offset-[3px] hover:text-stone-600 transition-colors cursor-pointer",
+                class: "whimsy-link",
               },
             },
           ],
-          text: "Novel",
+          text: "Whimsy",
         },
         {
           type: "text",
-          text: " is a Notion-style WYSIWYG editor with AI-powered autocompletion. Built with ",
+          text: " is a WYSIWYG editor with AI-powered autocompletion. Built with ",
         },
         {
           type: "text",
@@ -36,8 +37,7 @@ export const defaultEditorContent = {
               attrs: {
                 href: "https://tiptap.dev/",
                 target: "_blank",
-                class:
-                  "text-stone-400 underline underline-offset-[3px] hover:text-stone-600 transition-colors cursor-pointer",
+                class: "whimsy-link",
               },
             },
           ],
@@ -52,8 +52,7 @@ export const defaultEditorContent = {
               attrs: {
                 href: "https://sdk.vercel.ai/docs",
                 target: "_blank",
-                class:
-                  "text-stone-400 underline underline-offset-[3px] hover:text-stone-600 transition-colors cursor-pointer text-stone-400 underline underline-offset-[3px] hover:text-stone-600 transition-colors cursor-pointer",
+                class: "whimsy-link",
               },
             },
           ],
@@ -70,7 +69,7 @@ export const defaultEditorContent = {
     {
       type: "codeBlock",
       attrs: { language: null },
-      content: [{ type: "text", text: "npm i novel" }],
+      content: [{ type: "text", text: "npm i whimsy-editor-vue" }],
     },
     {
       type: "heading",
@@ -121,32 +120,8 @@ export const defaultEditorContent = {
             },
           ],
         },
-        {
-          type: "listItem",
-          content: [
-            {
-              type: "paragraph",
-              content: [
-                {
-                  type: "text",
-                  text: "Image uploads (drag & drop / copy & paste, or select from slash menu) ",
-                },
-              ],
-            },
-          ],
-        },
       ],
     },
-    // {
-    //   type: "image",
-    //   attrs: {
-    //     src: "https://public.blob.vercel-storage.com/pJrjXbdONOnAeZAZ/banner-2wQk82qTwyVgvlhTW21GIkWgqPGD2C.png",
-    //     alt: "banner.png",
-    //     title: "banner.png",
-    //     width: null,
-    //     height: null,
-    //   },
-    // },
     { type: "horizontalRule" },
     {
       type: "heading",
@@ -170,7 +145,7 @@ export const defaultEditorContent = {
                     {
                       type: "link",
                       attrs: {
-                        href: "https://github.com/steven-tey/novel",
+                        href: "https://github.com/nktkarnany/whimsy-editor-vue",
                         target: "_blank",
                         class:
                           "text-stone-400 underline underline-offset-[3px] hover:text-stone-600 transition-colors cursor-pointer",
@@ -197,42 +172,14 @@ export const defaultEditorContent = {
                     {
                       type: "link",
                       attrs: {
-                        href: "https://www.npmjs.com/package/novel",
+                        href: "https://www.npmjs.com/package/whimsy-editor-vue",
                         target: "_blank",
-                        class:
-                          "text-stone-400 underline underline-offset-[3px] hover:text-stone-600 transition-colors cursor-pointer",
+                        class: "whimsy-link",
                       },
                     },
                   ],
                   text: "NPM package",
                 },
-              ],
-            },
-          ],
-        },
-        {
-          type: "taskItem",
-          attrs: { checked: false },
-          content: [
-            {
-              type: "paragraph",
-              content: [
-                {
-                  type: "text",
-                  marks: [
-                    {
-                      type: "link",
-                      attrs: {
-                        href: "https://vercel.com/templates/next.js/novel",
-                        target: "_blank",
-                        class:
-                          "text-stone-400 underline underline-offset-[3px] hover:text-stone-600 transition-colors cursor-pointer",
-                      },
-                    },
-                  ],
-                  text: "Deploy your own",
-                },
-                { type: "text", text: " to Vercel" },
               ],
             },
           ],

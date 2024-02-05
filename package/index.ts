@@ -1,6 +1,5 @@
-import "./src/styles/index.css";
-import "./src/styles/naiveui.css";
-import "./src/styles/Prosemirror.css";
+import "./src/styles/index.scss";
+import "./src/styles/Prosemirror.scss";
 
 import Editor from "./src/components/Editor.vue";
 

@@ -1,7 +1,6 @@
 import { createApp } from "vue";
-import "./styles/index.css";
-import "./styles/naiveui.css";
-import "./styles/Prosemirror.css";
+import "./styles/index.scss";
+import "./styles/Prosemirror.scss";
 import App from "./App.vue";
 
 createApp(App).mount("#app");
