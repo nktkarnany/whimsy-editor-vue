@@ -2,17 +2,21 @@
   outline: none;
 }
 
+.ProseMirror > *:first-child {
+  margin-top: 0;
+}
+
 .ProseMirror .is-editor-empty:first-child::before {
   content: attr(data-placeholder);
   float: left;
-  color: var(--whimsy-stone-400);
+  color: var(--gray-400);
   pointer-events: none;
   height: 0;
 }
 .ProseMirror .is-empty::before {
   content: attr(data-placeholder);
   float: left;
-  color: var(--whimsy-stone-400);
+  color: var(--gray-400);
   pointer-events: none;
   height: 0;
 }
@@ -45,8 +49,8 @@
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    border: 3px solid var(--whimsy-stone-200);
-    border-top-color: var(--whimsy-stone-800);
+    border: 3px solid var(--gray-200);
+    border-top-color: var(--gray-800);
     animation: spinning 0.6s linear infinite;
   }
 }
@@ -73,24 +77,24 @@ ul[data-type="taskList"] li > label {
 ul[data-type="taskList"] li > label input[type="checkbox"] {
   -webkit-appearance: none;
   appearance: none;
-  background-color: var(--whimsy-white);
+  background-color: var(-white);
   margin: 0;
   cursor: pointer;
   width: 1.2em;
   height: 1.2em;
   position: relative;
   top: 5px;
-  border: 2px solid var(--whimsy-stone-900);
+  border: 2px solid var(--gray-900);
   margin-right: 0.3rem;
   display: grid;
   place-content: center;
 
   &:hover {
-    background-color: var(--novel-stone-50);
+    background-color: var(--gray-200);
   }
 
   &:active {
-    background-color: var(--novel-stone-200);
+    background-color: var(--gray-300);
   }
 
   &::before {
@@ -110,7 +114,7 @@ ul[data-type="taskList"] li > label input[type="checkbox"] {
 }
 
 ul[data-type="taskList"] li[data-checked="true"] > div > p {
-  color: var(--novel-stone-400);
+  color: var(--gray-400);
   text-decoration: line-through;
   text-decoration-thickness: 2px;
 }

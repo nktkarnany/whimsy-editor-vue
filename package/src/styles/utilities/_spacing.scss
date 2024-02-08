@@ -103,9 +103,19 @@
   padding: var(--spacing-medium);
 }
 
+.py-1 {
+  padding-top: var(--spacing-small);
+  padding-bottom: var(--spacing-small);
+}
+
 .py-3 {
   padding-top: var(--spacing-medium);
   padding-bottom: var(--spacing-medium);
+}
+
+.px-1 {
+  padding-left: var(--spacing-small);
+  padding-right: var(--spacing-small);
 }
 
 .px-3 {

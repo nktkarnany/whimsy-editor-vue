@@ -36,14 +36,13 @@ export const defaultExtensions = [
     },
     codeBlock: {
       HTMLAttributes: {
-        class:
-          "rounded-sm bg-stone-100 p-5 font-mono font-medium text-stone-800",
+        class: "rounded-sm bg-gray-200 p-5 font-size-0_8rem color-gray-700",
       },
     },
     code: {
       HTMLAttributes: {
         class:
-          "rounded-md bg-stone-200 px-1.5 py-1 font-mono font-medium text-stone-900",
+          "rounded-md bg-gray-300 px-1 py-1 font-size-0_8rem color-gray-800",
         spellcheck: "false",
       },
     },
@@ -77,7 +76,7 @@ export const defaultExtensions = [
     },
   }).configure({
     HTMLAttributes: {
-      class: "mt-4 mb-6 border-t border-stone-300",
+      class: "mt-3 mb-5 border-top border-color",
     },
   }),
   TiptapLink.configure({
@@ -103,12 +102,12 @@ export const defaultExtensions = [
   }),
   TaskList.configure({
     HTMLAttributes: {
-      class: "not-prose pl-2",
+      class: "not-prose pl-3",
     },
   }),
   TaskItem.configure({
     HTMLAttributes: {
-      class: "flex items-start my-4",
+      class: "d-flex align-start my-3",
     },
     nested: true,
   }),

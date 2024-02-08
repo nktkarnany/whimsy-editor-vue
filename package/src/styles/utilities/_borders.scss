@@ -8,6 +8,14 @@
   border: 0;
 }
 
+.border-top {
+  border-top-width: 1px;
+}
+
+.border-color {
+  border-color: var(--gray-300);
+}
+
 // Border Radius
 // ----------------------------------------------------------------------
 .rounded {

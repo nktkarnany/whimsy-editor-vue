@@ -229,6 +229,6 @@ watchEffect(() => {
   background-color: var(--white);
   border: var(--standard-border);
   border-radius: var(--standard-border-radius);
-  padding: var(--spacing-medium);
+  padding: var(--spacing-large);
 }
 </style>
