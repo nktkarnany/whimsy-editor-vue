@@ -1,0 +1,87 @@
+// Positioning
+// ----------------------------------------------------------------------
+// Gaps
+.small-gap {
+  gap: var(--spacing-small);
+}
+
+.medium-gap {
+  gap: var(--spacing-medium);
+}
+
+.large-gap {
+  gap: var(--spacing-large);
+}
+
+// Position
+// ----------------------------------------------------------------------
+.position-relative {
+  position: relative;
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+.position-fixed {
+  position: fixed;
+}
+
+// Flexbox
+// ----------------------------------------------------------------------
+.d-flex {
+  display: flex;
+}
+
+.d-flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.justify-start {
+  justify-content: start;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-fill {
+  flex: 1 1 auto;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-1_5 {
+  flex: 1.5;
+}
+
+.flex-grow-unset {
+  flex-grow: unset;
+}
+
+.d-flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

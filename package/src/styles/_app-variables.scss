@@ -1,0 +1,37 @@
+:root {
+  // Generic
+  --standard-border-radius: 5px;
+  --spacing-small: 6px;
+  --spacing-medium: 15px;
+  --spacing-large: 24px;
+
+  //Border/lines
+  --standard-border: 0.5px solid var(--gray-700);
+
+  // Font Sizes
+  --font-size-x-large: 1.5rem; // (24px) Use, for example, in large titles
+  --font-size-large: 1.25rem; // (20px) Use, for example, in page titles
+  --font-size-big: 1rem; // (16px) Use, for example, in table headers
+  --font-size-normal: 0.875rem; // (14px)
+  --font-size-small: 0.75rem; // (12px)
+  --font-size-x-small: 0.625rem; // (10px)
+
+  --input-bg-color: var(--gray-800);
+  --input-border-color: var(--gray-700);
+  --input-disabled-color: var(--gray-700-lighter); // Deprecated variable
+  --input-disabled-text-color: var(--gray-200);
+  --input-disabled-bg-color: var(--gray-600);
+  --input-border-radius: 0.25rem;
+  --input-height-small: 2rem;
+  --input-height: 2.5rem;
+  --input-height-large: 3.15rem;
+  --input-placeholder-color: var(--gray-500-dark);
+  --input-placeholder-disabled-color: var(--gray-400);
+  --input-padding-left: 0.75rem;
+  --input-padding-right: 0.75rem;
+
+  --button-height-large: 40px;
+  --button-height-medium: 34px;
+  --button-height-small: 28px;
+  --button-height-tiny: 22px;
+}

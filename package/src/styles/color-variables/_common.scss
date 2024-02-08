@@ -1,0 +1,51 @@
+:root {
+  --white: #fff;
+  --gray-200: #f8f9fa;
+  --gray-300: #dee2e6;
+  --gray-400: #ced4da;
+  --gray-500: #adb5bd;
+  --gray-600: #6c757d;
+  --gray-700: #495057;
+  --gray-800: #343a40;
+  --gray-900: #212529;
+  --black: #000;
+
+  --whimsy-highlight-default: #000000;
+  --whimsy-highlight-purple: #3f2c4b;
+  --whimsy-highlight-red: #5c1a1a;
+  --whimsy-highlight-yellow: #5c4b1a;
+  --whimsy-highlight-blue: #1a3d5c;
+  --whimsy-highlight-green: #1a5c20;
+  --whimsy-highlight-orange: #5c3a1a;
+  --whimsy-highlight-pink: #5c1a3a;
+  --whimsy-highlight-gray: #3a3a3a;
+
+  // Text colors
+  --text-color-normal: var(--gray-900);
+  --text-color-muted: var(--gray-500);
+  --text-color-reversed: var(--gray-300);
+  --text-color-disabled: var(--gray-600);
+}
+
+.dark-theme {
+  --white: #fff;
+  --gray-200: #f8f9fa;
+  --gray-300: #dee2e6;
+  --gray-400: #ced4da;
+  --gray-500: #adb5bd;
+  --gray-600: #6c757d;
+  --gray-700: #495057;
+  --gray-800: #343a40;
+  --gray-900: #212529;
+  --black: #000;
+
+  --whimsy-highlight-default: #000000;
+  --whimsy-highlight-purple: #3f2c4b;
+  --whimsy-highlight-red: #5c1a1a;
+  --whimsy-highlight-yellow: #5c4b1a;
+  --whimsy-highlight-blue: #1a3d5c;
+  --whimsy-highlight-green: #1a5c20;
+  --whimsy-highlight-orange: #5c3a1a;
+  --whimsy-highlight-pink: #5c1a3a;
+  --whimsy-highlight-gray: #3a3a3a;
+}

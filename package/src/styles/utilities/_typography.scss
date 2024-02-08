@@ -1,0 +1,175 @@
+// Typography
+// ----------------------------------------------------------------------
+// Text
+.title-small {
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.empty-state-text {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--text-color-muted);
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.text-align-left {
+  text-align: left;
+}
+
+.text-align-right {
+  text-align: right;
+}
+
+.text-muted {
+  color: var(--text-color-muted);
+}
+
+.text-color-normal {
+  color: var(--text-color-normal);
+}
+
+// Line break
+// ----------------------------------------------------------------------
+.line-break-anywhere {
+  line-break: anywhere;
+}
+
+.line-break-loose {
+  line-break: loose;
+}
+
+// Fonts
+// ----------------------------------------------------------------------
+.text-size-sm {
+  font-size: 0.7rem !important;
+}
+
+.font-size-0_5rem {
+  font-size: 0.5rem;
+}
+
+.font-size-0_6rem {
+  font-size: 0.6rem;
+}
+
+.font-size-0_625rem {
+  font-size: 0.625rem;
+}
+
+.font-size-0_7rem {
+  font-size: 0.7rem;
+}
+
+.font-size-0_8rem {
+  font-size: 0.8rem;
+}
+
+.font-size-1_2rem {
+  font-size: 1.2rem;
+}
+
+.font-size-1_4rem {
+  font-size: 1.4rem;
+}
+
+.font-size-1_5rem {
+  font-size: 1.5rem;
+}
+
+.font-size-1rem {
+  font-size: 1rem;
+}
+
+.font-size-1_2rem {
+  font-size: 1.2rem;
+}
+
+.font-size-1_7rem {
+  font-size: 1.7rem;
+}
+
+.font-size-2rem {
+  font-size: 2rem;
+}
+
+.font-size-2_7rem {
+  font-size: 3rem;
+}
+
+.font-weight-300 {
+  font-weight: 300;
+}
+
+.font-weight-600 {
+  font-weight: 600;
+}
+
+.font-weight-800 {
+  font-weight: 800;
+}
+
+// Line height
+// ----------------------------------------------------------------------
+.line-height-0_8 {
+  line-height: 0.8;
+}
+
+.line-height-1 {
+  line-height: 1;
+}
+
+.line-height-1_25 {
+  line-height: 1.25;
+}
+
+.line-height-2_2 {
+  line-height: 2.2;
+}
+
+// Misc
+// ----------------------------------------------------------------------
+@mixin text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text-ellipsis {
+  @include text-ellipsis;
+}
+
+.text-truncate-two-lines {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* This specifies the number of lines to display before truncating */
+  -webkit-box-orient: vertical;
+}
+
+.text-truncate-three-lines {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* This specifies the number of lines to display before truncating */
+  -webkit-box-orient: vertical;
+}
+
+.text-truncate-four-lines {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* This specifies the number of lines to display before truncating */
+  -webkit-box-orient: vertical;
+}
+
+.text-truncate-five-lines {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 5; /* This specifies the number of lines to display before truncating */
+  -webkit-box-orient: vertical;
+}

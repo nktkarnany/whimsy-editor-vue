@@ -1,0 +1,26 @@
+@import url("https://fonts.cdnfonts.com/css/open-sans");
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+:root {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+
+  body {
+    background-color: var(--white);
+    color: var(--text-color-normal);
+    font-family: "Open Sans", sans-serif;
+  }
+}

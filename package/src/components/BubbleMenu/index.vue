@@ -1,28 +1,25 @@
 <template>
   <BubbleMenu
     :editor="editor"
-    class="flex bg-white border divide-x rounded shadow-xl w-fit divide-stone-200 border-stone-200"
+    :tippy-options="{ maxWidth: '100%' }"
+    class="bubble-menu"
   >
-    <div class="flex">
-      <NodeSelector :editor="editor" />
-      <LinkSelector :editor="editor" />
-      <button
-        v-for="(item, index) in items"
-        :key="index"
-        @click="item.command()"
-        class="p-2 text-stone-600 hover:bg-stone-100 active:bg-stone-200"
-        type="button"
-      >
-        <component
-          :is="item.icon"
-          class="w-4 h-4"
-          :class="{
-            'text-blue-500': item.isActive(),
-          }"
-        />
-      </button>
-      <ColorSelector :editor="editor" />
-    </div>
+    <NodeSelector :editor="editor" />
+    <LinkSelector :editor="editor" />
+    <n-button
+      v-for="(item, index) in items"
+      :key="index"
+      @click="item.command()"
+      variant="text"
+    >
+      <component
+        :is="item.icon"
+        :class="{
+          'text-blue-500': item.isActive(),
+        }"
+      />
+    </n-button>
+    <ColorSelector :editor="editor" />
   </BubbleMenu>
 </template>
 
@@ -37,6 +34,8 @@ import {
   StrikethroughIcon,
   CodeIcon,
 } from "lucide-vue-next";
+
+import { NButton } from "naive-ui";
 
 import NodeSelector from "./NodeSelector.vue";
 import LinkSelector from "./LinkSelector.vue";
@@ -83,4 +82,14 @@ const items = [
 ];
 </script>
 
-<style scoped></style>
+<style scoped lang="scss">
+.bubble-menu {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-small);
+  background-color: var(--white);
+  border: var(--standard-border);
+  border-radius: var(--standard-border-radius);
+  padding: var(--spacing-small);
+}
+</style>

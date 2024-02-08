@@ -1,0 +1,31 @@
+// Borders
+// ----------------------------------------------------------------------
+.bt-none {
+  border-top: none;
+}
+
+.border-0 {
+  border: 0;
+}
+
+// Border Radius
+// ----------------------------------------------------------------------
+.rounded {
+  border-radius: var(--standard-border-radius);
+}
+
+.rounded-ts-0 {
+  border-top-left-radius: 0;
+}
+
+.rounded-te-0 {
+  border-top-right-radius: 0;
+}
+
+.rounded-be-0 {
+  border-top-right-radius: 0;
+}
+
+.rounded-bs-0 {
+  border-bottom-left-radius: 0;
+}

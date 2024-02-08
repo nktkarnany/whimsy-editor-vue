@@ -1,44 +1,36 @@
 <template>
-  <Popover>
-    <div class="relative">
-      <PopoverButton
-        class="flex items-center gap-1 p-2 text-sm font-medium whitespace-nowrap text-stone-600 hover:bg-stone-100 active:bg-stone-200 focus:outline-none"
+  <n-popover ref="popover" trigger="click">
+    <template #trigger>
+      <n-button variant="text">
+        {{ activeItem?.name }} <ChevronDown />
+      </n-button>
+    </template>
+    <div>
+      <button
+        v-for="(item, index) in items"
+        :key="index"
+        class="d-flex-center"
+        type="button"
+        @click="
+          () => {
+            item.command();
+            popover?.setShow(false);
+          }
+        "
       >
-        <span>{{ activeItem?.name }}</span>
-        <ChevronDown class="w-4 h-4" />
-      </PopoverButton>
-
-      <PopoverPanel
-        align="start"
-        class="z-[99999] absolute my-1 flex max-h-80 w-48 flex-col overflow-hidden overflow-y-auto rounded border border-stone-200 bg-white p-1 shadow-xl animate-in fade-in slide-in-from-top-1"
-        v-slot="{ close }"
-      >
-        <button
-          v-for="(item, index) in items"
-          :key="index"
-          class="flex items-center justify-between px-2 py-1 text-sm rounded-sm text-stone-600 hover:bg-stone-100"
-          type="button"
-          @click="
-            () => {
-              item.command();
-              close();
-            }
-          "
-        >
-          <div class="flex items-center space-x-2">
-            <div class="p-1 border rounded-sm border-stone-200">
-              <component :is="item.icon" class="w-3 h-3" />
-            </div>
-            <span>{{ item.name }}</span>
-          </div>
-          <Check v-if="activeItem.name === item.name" class="w-4 h-4" />
-        </button>
-      </PopoverPanel>
+        <div class="d-flex-center">
+          <component :is="item.icon" />
+          <span>{{ item.name }}</span>
+        </div>
+        <Check v-if="activeItem.name === item.name" />
+      </button>
     </div>
-  </Popover>
+  </n-popover>
 </template>
 
 <script setup lang="ts">
+import { PropType, computed, ref } from "vue";
+
 import { Editor } from "@tiptap/core";
 import {
   Check,
@@ -52,8 +44,8 @@ import {
   Code,
   CheckSquare,
 } from "lucide-vue-next";
-import { PropType, computed } from "vue";
-import { Popover, PopoverButton, PopoverPanel } from "@headlessui/vue";
+
+import { NPopover, NButton } from "naive-ui";
 
 const props = defineProps({
   editor: {
@@ -61,6 +53,8 @@ const props = defineProps({
     required: true,
   },
 });
+
+const popover = ref<typeof NPopover | null>(null);
 
 const items = [
   {

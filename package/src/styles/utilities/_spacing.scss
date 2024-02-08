@@ -1,0 +1,150 @@
+// Spacing
+// ----------------------------------------------------------------------
+// Margin
+.m-0,
+.mt-0,
+.mr-0,
+.mb-0,
+.ml-0 {
+  margin: 0;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mx-2 {
+  margin-left: var(--spacing-small);
+  margin-right: var(--spacing-small);
+}
+
+.my-2 {
+  margin-top: var(--spacing-small);
+  margin-bottom: var(--spacing-small);
+}
+
+.my-3 {
+  margin-top: var(--spacing-medium);
+  margin-bottom: var(--spacing-medium);
+}
+
+.m-2 {
+  margin: var(--spacing-small);
+}
+
+.mt-2 {
+  margin-top: var(--spacing-small);
+}
+
+.mr-2 {
+  margin-right: var(--spacing-small);
+}
+
+.mb-2 {
+  margin-bottom: var(--spacing-small);
+}
+
+.ml-2 {
+  margin-left: var(--spacing-small);
+}
+
+.m-3 {
+  margin: var(--spacing-medium);
+}
+
+.mt-3 {
+  margin-top: var(--spacing-medium);
+}
+
+.mr-3 {
+  margin-right: var(--spacing-medium);
+}
+
+.mb-3 {
+  margin-bottom: var(--spacing-medium);
+}
+
+.ml-3 {
+  margin-left: var(--spacing-medium);
+}
+
+.m-5 {
+  margin: var(--spacing-large);
+}
+
+.mt-5 {
+  margin-top: var(--spacing-large);
+}
+
+.mr-5 {
+  margin-right: var(--spacing-large);
+}
+
+.mb-5 {
+  margin-bottom: var(--spacing-large);
+}
+
+.ml-5 {
+  margin-left: var(--spacing-large);
+}
+
+// Padding
+// ----------------------------------------------------------------------
+.p-0,
+.pt-0,
+.pr-0,
+.pb-0,
+.pl-0 {
+  padding: 0;
+}
+
+.p-3 {
+  padding: var(--spacing-medium);
+}
+
+.py-3 {
+  padding-top: var(--spacing-medium);
+  padding-bottom: var(--spacing-medium);
+}
+
+.px-3 {
+  padding-left: var(--spacing-medium);
+  padding-right: var(--spacing-medium);
+}
+
+.pt-3 {
+  padding-top: var(--spacing-medium);
+}
+
+.pr-3 {
+  padding-right: var(--spacing-medium);
+}
+
+.pb-3 {
+  padding-bottom: var(--spacing-medium);
+}
+
+.pl-3 {
+  padding-left: var(--spacing-medium);
+}
+
+.p-5 {
+  padding: var(--spacing-large);
+}
+
+.pt-5 {
+  padding-top: var(--spacing-large);
+}
+
+.pr-5 {
+  padding-right: var(--spacing-large);
+}
+
+.pb-5 {
+  padding-bottom: var(--spacing-large);
+}
+
+.pl-5 {
+  padding-left: var(--spacing-large);
+}

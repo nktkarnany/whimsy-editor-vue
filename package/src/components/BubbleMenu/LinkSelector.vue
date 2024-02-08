@@ -1,26 +1,20 @@
 <template>
-  <div class="relative">
-    <button
-      type="button"
-      class="flex h-full items-center space-x-2 px-3 py-1.5 text-sm font-medium text-stone-600 hover:bg-stone-100 active:bg-stone-200"
-      @click="isOpen = !isOpen"
-    >
-      <p class="text-base">↗</p>
-      <p
-        class="underline decoration-stone-400 underline-offset-4"
+  <div class="position-relative">
+    <n-button variant="text" @click="isOpen = !isOpen">
+      <component
+        :is="Link2Icon"
+        class="w-4 h-4"
         :class="{
           'text-blue-500': editor.isActive('link'),
         }"
-      >
-        Link
-      </p>
-    </button>
-    <form
+      />
+    </n-button>
+    <n-form
       v-if="isOpen"
       @submit.prevent="submit"
-      class="fixed top-full z-[99999] mt-1 flex w-60 overflow-hidden rounded border border-stone-200 bg-white p-1 shadow-xl animate-in fade-in slide-in-from-top-1"
+      class="position-fixed d-flex-center bg-gray-200"
     >
-      <input
+      <n-input
         ref="inputRef"
         type="text"
         placeholder="Paste a link"
@@ -28,9 +22,9 @@
         :defaultValue="editor.getAttributes('link').href || ''"
       />
 
-      <button
+      <n-button
         v-if="editor.getAttributes('link').href"
-        type="button"
+        variant="text"
         class="flex items-center p-1 text-red-600 transition-all rounded-sm hover:bg-red-100 dark:hover:bg-red-800"
         @click="
           () => {
@@ -40,21 +34,24 @@
         "
       >
         <Trash class="w-4 h-4" />
-      </button>
-      <button
+      </n-button>
+      <n-button
         v-else
+        variant="text"
         class="flex items-center p-1 transition-all rounded-sm text-stone-600 hover:bg-stone-100"
       >
         <Check class="w-4 h-4" />
-      </button>
-    </form>
+      </n-button>
+    </n-form>
   </div>
 </template>
 
 <script setup lang="ts">
 import { Editor } from "@tiptap/core";
-import { Check, Trash } from "lucide-vue-next";
+import { Link2Icon, Check, Trash } from "lucide-vue-next";
 import { PropType, ref } from "vue";
+
+import { NButton, NForm, NInput } from "naive-ui";
 
 defineProps({
   editor: {
