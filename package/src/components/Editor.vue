@@ -223,4 +223,12 @@ watchEffect(() => {
 });
 </script>
 
-<style scoped></style>
+<style scoped lang="scss">
+.whimsy-editor {
+  position: relative;
+  background-color: var(--white);
+  border: var(--standard-border);
+  border-radius: var(--standard-border-radius);
+  padding: var(--spacing-medium);
+}
+</style>
