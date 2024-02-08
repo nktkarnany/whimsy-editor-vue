@@ -23,7 +23,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@headlessui/vue": "^1.7.17",
     "@tiptap/extension-color": "^2.2.0",
     "@tiptap/extension-highlight": "^2.2.0",
     "@tiptap/extension-horizontal-rule": "^2.2.0",
