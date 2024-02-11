@@ -20,6 +20,22 @@
   border-width: 1px;
 }
 
+.border-top {
+  border-width: 0.5px;
+}
+
+.border-color {
+  border-color: var(--gray-500);
+}
+
+.border-muted {
+  border-color: var(--gray-300);
+}
+
+.border-solid {
+  border-style: solid;
+}
+
 // Border Radius
 // ----------------------------------------------------------------------
 .rounded-none {

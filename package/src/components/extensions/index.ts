@@ -16,17 +16,17 @@ export const defaultExtensions = [
   StarterKit.configure({
     bulletList: {
       HTMLAttributes: {
-        class: "list-disc list-outside leading-3 -mt-2",
+        class: "list-disc list-outside leading-3 mt-2",
       },
     },
     orderedList: {
       HTMLAttributes: {
-        class: "list-decimal list-outside leading-3 -mt-2",
+        class: "list-decimal list-outside leading-3 mt-2",
       },
     },
     listItem: {
       HTMLAttributes: {
-        class: "leading-normal -mb-2",
+        class: "leading-normal mb-2",
       },
     },
     blockquote: {
@@ -36,13 +36,12 @@ export const defaultExtensions = [
     },
     codeBlock: {
       HTMLAttributes: {
-        class: "rounded-sm bg-gray-200 p-5 font-size-0_8rem color-gray-700",
+        class: "rounded-sm bg-gray-200 p-5 text-sm color-gray-700",
       },
     },
     code: {
       HTMLAttributes: {
-        class:
-          "rounded-md bg-gray-300 px-1 py-1 font-size-0_8rem color-gray-800",
+        class: "rounded-md bg-gray-300 px-1 py-1 text-sm color-gray-800",
         spellcheck: "false",
       },
     },
@@ -76,7 +75,7 @@ export const defaultExtensions = [
     },
   }).configure({
     HTMLAttributes: {
-      class: "mt-3 mb-5 border-top border-color",
+      class: "mt-3 mb-5 border-top border-solid border-color",
     },
   }),
   TiptapLink.configure({

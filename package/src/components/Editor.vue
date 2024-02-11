@@ -37,7 +37,8 @@ const props = defineProps({
    */
   className: {
     type: String,
-    default: "whimsy-editor",
+    default:
+      "relative bg-color-white shadow-lg border border-muted border-solid p-5 rounded-lg",
   },
   /**
    * The default value to use for the editor.
@@ -223,12 +224,4 @@ watchEffect(() => {
 });
 </script>
 
-<style scoped lang="scss">
-.whimsy-editor {
-  position: relative;
-  background-color: var(--white);
-  border: var(--standard-border);
-  border-radius: var(--standard-border-radius);
-  padding: var(--spacing-large);
-}
-</style>
+<style scoped lang="scss"></style>
