@@ -14,6 +14,16 @@ import SlashCommand from "./slashExtension";
 
 export const defaultExtensions = [
   StarterKit.configure({
+    heading: {
+      HTMLAttributes: {
+        class: "heading",
+      },
+    },
+    paragraph: {
+      HTMLAttributes: {
+        class: "paragraph",
+      },
+    },
     bulletList: {
       HTMLAttributes: {
         class: "list-disc list-outside leading-3 mt-2",
