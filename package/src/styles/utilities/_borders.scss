@@ -1,39 +1,59 @@
 // Borders
 // ----------------------------------------------------------------------
-.bt-none {
-  border-top: none;
-}
-
 .border-0 {
-  border: 0;
+  border-width: 0px;
 }
 
-.border-top {
-  border-top-width: 1px;
+.border-2 {
+  border-width: 2px;
 }
 
-.border-color {
-  border-color: var(--gray-300);
+.border-4 {
+  border-width: 4px;
+}
+
+.border-8 {
+  border-width: 8px;
+}
+
+.border {
+  border-width: 1px;
 }
 
 // Border Radius
 // ----------------------------------------------------------------------
+.rounded-none {
+  border-radius: 0px;
+}
+
+.rounded-sm {
+  border-radius: 0.125rem; /* 2px */
+}
+
 .rounded {
-  border-radius: var(--standard-border-radius);
+  border-radius: 0.25rem; /* 4px */
 }
 
-.rounded-ts-0 {
-  border-top-left-radius: 0;
+.rounded-md {
+  border-radius: 0.375rem; /* 6px */
 }
 
-.rounded-te-0 {
-  border-top-right-radius: 0;
+.rounded-lg {
+  border-radius: 0.5rem; /* 8px */
 }
 
-.rounded-be-0 {
-  border-top-right-radius: 0;
+.rounded-xl {
+  border-radius: 0.75rem; /* 12px */
 }
 
-.rounded-bs-0 {
-  border-bottom-left-radius: 0;
+.rounded-2xl {
+  border-radius: 1rem; /* 16px */
+}
+
+.rounded-3xl {
+  border-radius: 1.5rem; /* 24px */
+}
+
+.rounded-full {
+  border-radius: 9999px;
 }

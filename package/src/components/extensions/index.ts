@@ -81,8 +81,7 @@ export const defaultExtensions = [
   }),
   TiptapLink.configure({
     HTMLAttributes: {
-      class:
-        "text-stone-400 underline underline-offset-[3px] hover:text-stone-600 transition-colors cursor-pointer",
+      class: "color-gray-500 underline underline-offset-4 cursor-pointer",
     },
   }),
   Placeholder.configure({

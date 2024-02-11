@@ -15,16 +15,24 @@
 
 // Position
 // ----------------------------------------------------------------------
-.position-relative {
-  position: relative;
+.static {
+  position: static;
 }
 
-.position-absolute {
+.fixed {
+  position: fixed;
+}
+
+.absolute {
   position: absolute;
 }
 
-.position-fixed {
-  position: fixed;
+.relative {
+  position: relative;
+}
+
+.sticky {
+  position: sticky;
 }
 
 // Flexbox
@@ -74,18 +82,4 @@
 
 .flex-1 {
   flex: 1;
-}
-
-.flex-1_5 {
-  flex: 1.5;
-}
-
-.flex-grow-unset {
-  flex-grow: unset;
-}
-
-.d-flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }

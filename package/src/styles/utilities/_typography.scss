@@ -1,175 +1,327 @@
 // Typography
 // ----------------------------------------------------------------------
-// Text
-.title-small {
+
+// Font Family
+// ----------------------------------------------------------------------
+.font-sans {
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.font-serif {
+  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+.font-mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+}
+
+// Font Sizes
+// ----------------------------------------------------------------------
+.text-xs {
   font-size: 0.75rem;
-  font-weight: bold;
+  line-height: 1rem;
 }
 
-.empty-state-text {
-  font-size: 3rem;
-  font-weight: bold;
-  color: var(--text-color-muted);
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
-.text-align-center {
-  text-align: center;
-}
-
-.text-align-left {
-  text-align: left;
-}
-
-.text-align-right {
-  text-align: right;
-}
-
-.text-muted {
-  color: var(--text-color-muted);
-}
-
-.text-color-normal {
-  color: var(--text-color-normal);
-}
-
-// Line break
-// ----------------------------------------------------------------------
-.line-break-anywhere {
-  line-break: anywhere;
-}
-
-.line-break-loose {
-  line-break: loose;
-}
-
-// Fonts
-// ----------------------------------------------------------------------
-.text-size-sm {
-  font-size: 0.7rem !important;
-}
-
-.font-size-0_5rem {
-  font-size: 0.5rem;
-}
-
-.font-size-0_6rem {
-  font-size: 0.6rem;
-}
-
-.font-size-0_625rem {
-  font-size: 0.625rem;
-}
-
-.font-size-0_7rem {
-  font-size: 0.7rem;
-}
-
-.font-size-0_8rem {
-  font-size: 0.8rem;
-}
-
-.font-size-1_2rem {
-  font-size: 1.2rem;
-}
-
-.font-size-1_4rem {
-  font-size: 1.4rem;
-}
-
-.font-size-1_5rem {
-  font-size: 1.5rem;
-}
-
-.font-size-1rem {
+.text-base {
   font-size: 1rem;
+  line-height: 1.5rem;
 }
 
-.font-size-1_2rem {
-  font-size: 1.2rem;
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
 }
 
-.font-size-1_7rem {
-  font-size: 1.7rem;
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 
-.font-size-2rem {
-  font-size: 2rem;
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
-.font-size-2_7rem {
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.text-5xl {
   font-size: 3rem;
-}
-
-.font-weight-300 {
-  font-weight: 300;
-}
-
-.font-weight-600 {
-  font-weight: 600;
-}
-
-.font-weight-800 {
-  font-weight: 800;
-}
-
-// Line height
-// ----------------------------------------------------------------------
-.line-height-0_8 {
-  line-height: 0.8;
-}
-
-.line-height-1 {
   line-height: 1;
 }
 
-.line-height-1_25 {
+.text-6xl {
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
+.text-7xl {
+  font-size: 4.5rem;
+  line-height: 1;
+}
+
+.text-8xl {
+  font-size: 6rem;
+  line-height: 1;
+}
+
+.text-9xl {
+  font-size: 8rem;
+  line-height: 1;
+}
+
+// Font Weights
+// ----------------------------------------------------------------------
+.font-thin {
+  font-weight: 100;
+}
+
+.font-extralight {
+  font-weight: 200;
+}
+
+.font-light {
+  font-weight: 300;
+}
+
+.font-normal {
+  font-weight: 400;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.font-extrabold {
+  font-weight: 800;
+}
+
+.font-black {
+  font-weight: 900;
+}
+
+// Line Heights
+// ----------------------------------------------------------------------
+.leading-3 {
+  line-height: 0.75rem; /* 12px */
+}
+
+.leading-4 {
+  line-height: 1rem; /* 16px */
+}
+
+.leading-5 {
+  line-height: 1.25rem; /* 20px */
+}
+
+.leading-6 {
+  line-height: 1.5rem; /* 24px */
+}
+
+.leading-7 {
+  line-height: 1.75rem; /* 28px */
+}
+
+.leading-8 {
+  line-height: 2rem; /* 32px */
+}
+
+.leading-9 {
+  line-height: 2.25rem; /* 36px */
+}
+
+.leading-10 {
+  line-height: 2.5rem; /* 40px */
+}
+
+.leading-none {
+  line-height: 1;
+}
+
+.leading-tight {
   line-height: 1.25;
 }
 
-.line-height-2_2 {
-  line-height: 2.2;
+.leading-snug {
+  line-height: 1.375;
 }
 
-// Misc
+.leading-normal {
+  line-height: 1.5;
+}
+
+.leading-relaxed {
+  line-height: 1.625;
+}
+
+.leading-loose {
+  line-height: 2;
+}
+
+// Text Align
 // ----------------------------------------------------------------------
-@mixin text-ellipsis {
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.text-start {
+  text-align: start;
+}
+
+.text-end {
+  text-align: end;
+}
+
+// Text Decoration
+// ----------------------------------------------------------------------
+.underline {
+  text-decoration-line: underline;
+}
+
+.overline {
+  text-decoration-line: overline;
+}
+
+.line-through {
+  text-decoration-line: line-through;
+}
+
+.no-underline {
+  text-decoration-line: none;
+}
+
+.underline-offset-auto {
+  text-underline-offset: auto;
+}
+
+.underline-offset-0 {
+  text-underline-offset: 0px;
+}
+
+.underline-offset-1 {
+  text-underline-offset: 1px;
+}
+
+.underline-offset-2 {
+  text-underline-offset: 2px;
+}
+
+.underline-offset-4 {
+  text-underline-offset: 4px;
+}
+
+.underline-offset-8 {
+  text-underline-offset: 8px;
+}
+
+// Text Transform
+// ----------------------------------------------------------------------
+.uppercase {
+  text-transform: uppercase;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.normal-case {
+  text-transform: none;
+}
+
+// Text Overflow
+// ----------------------------------------------------------------------
+.truncate {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
 .text-ellipsis {
-  @include text-ellipsis;
+  text-overflow: ellipsis;
 }
 
-.text-truncate-two-lines {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2; /* This specifies the number of lines to display before truncating */
-  -webkit-box-orient: vertical;
+.text-clip {
+  text-overflow: clip;
 }
 
-.text-truncate-three-lines {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 3; /* This specifies the number of lines to display before truncating */
-  -webkit-box-orient: vertical;
+// Text Wrap
+// ----------------------------------------------------------------------
+.text-wrap {
+  text-wrap: wrap;
 }
 
-.text-truncate-four-lines {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 4; /* This specifies the number of lines to display before truncating */
-  -webkit-box-orient: vertical;
+.text-nowrap {
+  text-wrap: nowrap;
 }
 
-.text-truncate-five-lines {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 5; /* This specifies the number of lines to display before truncating */
-  -webkit-box-orient: vertical;
+.text-balance {
+  text-wrap: balance;
+}
+
+.text-pretty {
+  text-wrap: pretty;
+}
+
+// Whitespace
+// ----------------------------------------------------------------------
+.whitespace-normal {
+  white-space: normal;
+}
+
+.whitespace-nowrap {
+  white-space: nowrap;
+}
+
+.whitespace-pre {
+  white-space: pre;
+}
+
+.whitespace-pre-line {
+  white-space: pre-line;
+}
+
+.whitespace-pre-wrap {
+  white-space: pre-wrap;
+}
+
+.whitespace-break-spaces {
+  white-space: break-spaces;
 }
