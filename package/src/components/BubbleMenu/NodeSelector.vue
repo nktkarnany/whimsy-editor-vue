@@ -1,16 +1,16 @@
 <template>
-  <n-popover ref="popover" trigger="click">
+  <n-popover ref="popover" trigger="click" class="p-2">
     <template #trigger>
       <n-button variant="text">
         {{ activeItem?.name }} <ChevronDown />
       </n-button>
     </template>
-    <div>
-      <button
+    <div class="flex-column small-gap">
+      <n-button
         v-for="(item, index) in items"
         :key="index"
-        class="d-flex-center"
-        type="button"
+        variant="text"
+        class="justify-start"
         @click="
           () => {
             item.command();
@@ -18,12 +18,12 @@
           }
         "
       >
-        <div class="d-flex-center">
-          <component :is="item.icon" />
-          <span>{{ item.name }}</span>
-        </div>
+        <template #icon>
+          <component :is="item.icon" class="icon" />
+        </template>
+        <span>{{ item.name }}</span>
         <Check v-if="activeItem.name === item.name" />
-      </button>
+      </n-button>
     </div>
   </n-popover>
 </template>

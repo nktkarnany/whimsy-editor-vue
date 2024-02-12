@@ -88,8 +88,9 @@ const items = [
   align-items: center;
   gap: var(--spacing-small);
   background-color: var(--white);
-  border: var(--standard-border);
-  border-radius: var(--standard-border-radius);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  border: 1px solid var(--gray-300);
+  border-radius: 0.125rem;
   padding: var(--spacing-small);
 }
 </style>

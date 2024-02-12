@@ -26,12 +26,12 @@ export const defaultExtensions = [
     },
     bulletList: {
       HTMLAttributes: {
-        class: "list-disc list-outside leading-3 mt-2",
+        class: "list-disc list-outside not-prose leading-3",
       },
     },
     orderedList: {
       HTMLAttributes: {
-        class: "list-decimal list-outside leading-3 mt-2",
+        class: "list-decimal list-outside not-prose leading-3",
       },
     },
     listItem: {
@@ -115,7 +115,7 @@ export const defaultExtensions = [
   }),
   TaskItem.configure({
     HTMLAttributes: {
-      class: "d-flex align-start my-3",
+      class: "d-flex align-center my-3",
     },
     nested: true,
   }),
