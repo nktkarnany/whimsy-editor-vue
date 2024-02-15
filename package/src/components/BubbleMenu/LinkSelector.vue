@@ -5,14 +5,14 @@
         :is="Link2Icon"
         class="w-4 h-4"
         :class="{
-          'text-blue-500': editor.isActive('link'),
+          'gray-900': editor.isActive('link'),
         }"
       />
     </n-button>
     <n-form
       v-if="isOpen"
       @submit.prevent="submit"
-      class="position-fixed d-flex-center bg-gray-200"
+      class="fixed d-flex-center bg-gray-200 my-3"
     >
       <n-input
         ref="inputRef"

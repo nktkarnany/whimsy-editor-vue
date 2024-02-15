@@ -15,11 +15,11 @@
       <component
         :is="item.icon"
         :class="{
-          'text-blue-500': item.isActive(),
+          'color-gray-900': item.isActive(),
         }"
       />
     </n-button>
-    <ColorSelector :editor="editor" />
+    <!-- <ColorSelector :editor="editor" /> -->
   </BubbleMenu>
 </template>
 
@@ -39,7 +39,7 @@ import { NButton } from "naive-ui";
 
 import NodeSelector from "./NodeSelector.vue";
 import LinkSelector from "./LinkSelector.vue";
-import ColorSelector from "./ColorSelector.vue";
+// import ColorSelector from "./ColorSelector.vue";
 
 const props = defineProps({
   editor: {

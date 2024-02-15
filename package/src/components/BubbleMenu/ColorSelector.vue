@@ -1,5 +1,5 @@
 <template>
-  <n-popover ref="popover" trigger="click">
+  <n-popover ref="popover" trigger="click" content-class="p-3">
     <template #trigger>
       <n-button variant="text">
         <span
@@ -15,68 +15,72 @@
       </n-button>
     </template>
     <div>
-      <div class="px-2 my-1 text-sm text-stone-500">Color</div>
-      <n-button
-        v-for="(textColor, index) in TEXT_COLORS"
-        :key="index"
-        variant="text"
-        @click="
-          () => {
-            editor.commands.unsetColor();
-            textColor.name !== 'Default' &&
-              editor
-                .chain()
-                .focus()
-                .setColor(textColor.color || '')
-                .run();
-            popover?.setShow(false);
-          }
-        "
-      >
-        <div class="flex items-center space-x-2">
-          <div
-            class="px-1 py-px font-medium border rounded-sm border-stone-200"
-            :style="{ color: textColor.color }"
-          >
-            A
+      <div class="px-2 my-2 text-sm color-gray-900">Color</div>
+      <div class="d-flex">
+        <n-button
+          v-for="(textColor, index) in TEXT_COLORS"
+          :key="index"
+          variant="text"
+          @click="
+            () => {
+              editor.commands.unsetColor();
+              textColor.name !== 'Default' &&
+                editor
+                  .chain()
+                  .focus()
+                  .setColor(textColor.color || '')
+                  .run();
+              popover?.setShow(false);
+            }
+          "
+        >
+          <div class="flex items-center space-x-2">
+            <div
+              class="px-1 py-px font-medium border rounded-sm border-stone-200"
+              :style="{ color: textColor.color }"
+            >
+              A
+            </div>
+            <span>{{ textColor.name }}</span>
           </div>
-          <span>{{ textColor.name }}</span>
-        </div>
-        <Check
-          v-if="editor.isActive('textStyle', { color: textColor.color })"
-          class="w-4 h-4"
-        />
-      </n-button>
-      <div class="px-2 mt-2 mb-1 text-sm text-stone-500">Background</div>
-      <n-button
-        v-for="(highlightColor, index) in HIGHLIGHT_COLORS"
-        :key="index"
-        @click="
-          () => {
-            editor.commands.unsetHighlight();
-            highlightColor.name !== 'Default' &&
-              editor.commands.setHighlight({ color: highlightColor.color });
-            popover?.setShow(false);
-          }
-        "
-        class="flex items-center justify-between px-2 py-1 text-sm rounded-sm text-stone-600 hover:bg-stone-100"
-        variant="text"
-      >
-        <div class="flex items-center space-x-2">
-          <div
-            class="px-1 py-px font-medium border rounded-sm border-stone-200"
-            :style="{ backgroundColor: highlightColor.color }"
-          >
-            A
+          <Check
+            v-if="editor.isActive('textStyle', { color: textColor.color })"
+            class="w-4 h-4"
+          />
+        </n-button>
+      </div>
+      <div class="px-2 mt-5 mb-2 text-sm color-gray-900">Background</div>
+      <div class="d-flex">
+        <n-button
+          v-for="(highlightColor, index) in HIGHLIGHT_COLORS"
+          :key="index"
+          @click="
+            () => {
+              editor.commands.unsetHighlight();
+              highlightColor.name !== 'Default' &&
+                editor.commands.setHighlight({ color: highlightColor.color });
+              popover?.setShow(false);
+            }
+          "
+          class="flex items-center justify-between px-2 py-1 rounded-sm text-stone-600 hover:bg-stone-100"
+          variant="text"
+        >
+          <div class="flex items-center space-x-2">
+            <div
+              class="px-1 py-px font-medium border rounded-sm border-stone-200"
+              :style="{ backgroundColor: highlightColor.color }"
+            >
+              A
+            </div>
+            <span>{{ highlightColor.name }}</span>
           </div>
-          <span>{{ highlightColor.name }}</span>
-        </div>
 
-        <Check
-          v-if="editor.isActive('highlight', { color: highlightColor.color })"
-          class="w-4 h-4"
-        />
-      </n-button>
+          <Check
+            v-if="editor.isActive('highlight', { color: highlightColor.color })"
+            class="w-4 h-4"
+          />
+        </n-button>
+      </div>
     </div>
   </n-popover>
 </template>
