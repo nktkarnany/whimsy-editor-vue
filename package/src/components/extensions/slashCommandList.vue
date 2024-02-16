@@ -1,27 +1,23 @@
 <template>
-  <div
-    v-if="items.length > 0"
-    ref="commandListContainer"
-    class="z-50 h-auto max-h-[330px] w-72 overflow-y-auto rounded-md border border-stone-200 bg-white px-1 py-2 shadow-md transition-all"
-  >
-    <button
+  <div v-if="items.length > 0" ref="commandListContainer" class="command-menu">
+    <n-button
       v-for="(item, index) in items"
-      class="flex items-center w-full px-2 py-1 space-x-2 text-sm text-left rounded-md text-stone-900 hover:bg-stone-100"
-      :class="index === selectedIndex ? 'bg-stone-100 text-stone-900' : ''"
+      variant="text"
+      class="justify-start"
+      size="large"
+      :class="index === selectedIndex ? 'color-primary' : ''"
       :key="index"
       @click="selectItem(index)"
     >
-      <div
-        class="flex items-center justify-center w-10 h-10 bg-white border rounded-md border-stone-200"
-      >
+      <template #icon>
         <LoadingCircle v-if="item.title === 'Continue writing' && isLoading" />
         <component v-else :is="item.icon" size="18" />
-      </div>
-      <div>
+      </template>
+      <div class="text-left flex-1">
         <p class="font-medium">{{ item.title }}</p>
-        <p class="text-xs text-stone-500">{{ item.description }}</p>
+        <p class="text-xs color-gray-600">{{ item.description }}</p>
       </div>
-    </button>
+    </n-button>
   </div>
 </template>
 
@@ -32,6 +28,8 @@ import { SuggestionItem } from "./slashExtension";
 import LoadingCircle from "../icons/loadingCircle.vue";
 import { useCompletion } from "ai/vue";
 import { getPrevText } from "../../lib/editor";
+
+import { NButton } from "naive-ui";
 
 const props = defineProps({
   items: {
@@ -150,3 +148,16 @@ function scrollToSelected() {
   }
 }
 </script>
+
+<style scoped lang="scss">
+.command-menu {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-small);
+  background-color: var(--white);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  border: 1px solid var(--gray-300);
+  border-radius: 0.125rem;
+  padding: var(--spacing-small);
+}
+</style>
