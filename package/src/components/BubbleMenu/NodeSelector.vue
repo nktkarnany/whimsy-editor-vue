@@ -10,7 +10,9 @@
         v-for="(item, index) in items"
         :key="index"
         variant="text"
-        class="justify-start"
+        :class="`justify-start ${
+          activeItem.name === item.name ? 'active' : ''
+        }`"
         @click="
           () => {
             item.command();

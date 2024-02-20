@@ -15,11 +15,10 @@
       <component
         :is="item.icon"
         :class="{
-          'color-gray-900': item.isActive(),
+          active: item.isActive(),
         }"
       />
     </n-button>
-    <!-- <ColorSelector :editor="editor" /> -->
   </BubbleMenu>
 </template>
 
@@ -39,7 +38,6 @@ import { NButton } from "naive-ui";
 
 import NodeSelector from "./NodeSelector.vue";
 import LinkSelector from "./LinkSelector.vue";
-// import ColorSelector from "./ColorSelector.vue";
 
 const props = defineProps({
   editor: {
@@ -82,15 +80,4 @@ const items = [
 ];
 </script>
 
-<style scoped lang="scss">
-.bubble-menu {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-small);
-  background-color: var(--white);
-  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  border: 1px solid var(--gray-300);
-  border-radius: 0.125rem;
-  padding: var(--spacing-small);
-}
-</style>
+<style scoped lang="scss"></style>

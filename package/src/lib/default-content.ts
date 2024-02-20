@@ -82,7 +82,7 @@ export const defaultEditorContent: JSONContent = {
       content: [
         {
           type: "text",
-          text: 'import { Editor } from "novel";\n\nexport default function App() {\n  return (\n     <Editor />\n  )\n}',
+          text: 'import { Editor } from "whimsy-editor-vue";\n\nexport default function App() {\n  return (\n     <Editor />\n  )\n}',
         },
       ],
     },
@@ -147,8 +147,7 @@ export const defaultEditorContent: JSONContent = {
                       attrs: {
                         href: "https://github.com/nktkarnany/whimsy-editor-vue",
                         target: "_blank",
-                        class:
-                          "text-stone-400 underline underline-offset-[3px] hover:text-stone-600 transition-colors cursor-pointer",
+                        class: "whimsy-link",
                       },
                     },
                   ],

@@ -1,23 +1,36 @@
 <template>
   <div @click="editor?.chain().focus().run()" :class="className">
-    <BubbleMenu v-if="editor" :editor="editor" />
+    <slot name="bubble-menu">
+      <BubbleMenu v-if="editor" :editor="editor" />
+    </slot>
     <EditorContent :editor="editor" />
   </div>
 </template>
 
 <script setup lang="ts">
+// Importing from vue
 import { watchEffect, type PropType, ref, watch, provide } from "vue";
+
+// Importing from tiptap
 import { useEditor, EditorContent, Content, Extension } from "@tiptap/vue-3";
 import { EditorProps } from "@tiptap/pm/view";
 import { Editor as EditorClass } from "@tiptap/core";
+
+// Importing from vueuse utils
 import { useStorage, useDebounceFn } from "@vueuse/core";
+
+// Importing vercel ai sdk
 import { useCompletion } from "ai/vue";
 
-// Local Imports
+// Importing defaults
 import { defaultEditorContent } from "../lib/default-content";
-import { defaultExtensions } from "../components/extensions";
+import { defaultExtensions } from "./extensions";
 import { defaultEditorProps } from "../lib/props";
+
+// Importing bubble menu
 import BubbleMenu from "../components/BubbleMenu/index.vue";
+
+// Importing helpers
 import { getPrevText } from "../lib/editor";
 
 type Format = "html" | "json";

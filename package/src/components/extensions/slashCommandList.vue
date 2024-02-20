@@ -1,23 +1,18 @@
 <template>
   <div v-if="items.length > 0" ref="commandListContainer" class="command-menu">
-    <n-button
+    <div
       v-for="(item, index) in items"
-      variant="text"
-      class="justify-start"
-      size="large"
-      :class="index === selectedIndex ? 'color-primary' : ''"
+      class="d-flex cursor-pointer"
       :key="index"
+      :class="index === selectedIndex ? 'bg-gray-400' : ''"
       @click="selectItem(index)"
     >
-      <template #icon>
-        <LoadingCircle v-if="item.title === 'Continue writing' && isLoading" />
-        <component v-else :is="item.icon" size="18" />
-      </template>
+      <component :is="item.icon" size="18" />
       <div class="text-left flex-1">
         <p class="font-medium">{{ item.title }}</p>
         <p class="text-xs color-gray-600">{{ item.description }}</p>
       </div>
-    </n-button>
+    </div>
   </div>
 </template>
 
@@ -25,11 +20,8 @@
 import { inject, PropType, ref, watch } from "vue";
 import { Editor, Range } from "@tiptap/core";
 import { SuggestionItem } from "./slashExtension";
-import LoadingCircle from "../icons/loadingCircle.vue";
 import { useCompletion } from "ai/vue";
 import { getPrevText } from "../../lib/editor";
-
-import { NButton } from "naive-ui";
 
 const props = defineProps({
   items: {
@@ -53,7 +45,7 @@ const props = defineProps({
 const selectedIndex = ref(0);
 
 const { complete, isLoading } = useCompletion({
-  id: "novel-vue",
+  id: "whimsy-editor-vue",
   api: inject("completionApi"),
   onResponse: (_) => {
     props.editor.chain().focus().deleteRange(props.range).run();
@@ -159,5 +151,7 @@ function scrollToSelected() {
   border: 1px solid var(--gray-300);
   border-radius: 0.125rem;
   padding: var(--spacing-small);
+  height: 200px;
+  overflow: auto;
 }
 </style>

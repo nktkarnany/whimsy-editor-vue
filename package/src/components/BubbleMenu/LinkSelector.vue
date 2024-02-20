@@ -5,7 +5,7 @@
         :is="Link2Icon"
         class="w-4 h-4"
         :class="{
-          'gray-900': editor.isActive('link'),
+          active: editor.isActive('link'),
         }"
       />
     </n-button>

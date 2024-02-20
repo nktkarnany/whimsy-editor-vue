@@ -26,32 +26,33 @@ export const defaultExtensions = [
     },
     bulletList: {
       HTMLAttributes: {
-        class: "list-disc list-outside not-prose leading-3",
+        class: "bullet-list not-prose",
       },
     },
     orderedList: {
       HTMLAttributes: {
-        class: "list-decimal list-outside not-prose leading-3",
+        class: "ordered-list not-prose",
       },
     },
     listItem: {
       HTMLAttributes: {
-        class: "leading-normal mb-2",
+        class: "list-item mb-2",
       },
     },
     blockquote: {
       HTMLAttributes: {
-        class: "border-l-4 border-stone-700",
+        class: "blockquote",
       },
     },
     codeBlock: {
       HTMLAttributes: {
-        class: "rounded-sm bg-gray-200 p-5 text-sm color-gray-700",
+        class: "code-block",
+        spellcheck: "false",
       },
     },
     code: {
       HTMLAttributes: {
-        class: "rounded-md bg-gray-300 px-1 py-1 text-sm color-gray-800",
+        class: "code",
         spellcheck: "false",
       },
     },
@@ -85,12 +86,12 @@ export const defaultExtensions = [
     },
   }).configure({
     HTMLAttributes: {
-      class: "mt-3 mb-5 border-top border-solid border-color",
+      class: "horizontal-rule",
     },
   }),
   TiptapLink.configure({
     HTMLAttributes: {
-      class: "color-gray-500 underline underline-offset-4 cursor-pointer",
+      class: "link",
     },
   }),
   Placeholder.configure({

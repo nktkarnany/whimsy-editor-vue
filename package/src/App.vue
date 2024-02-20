@@ -19,12 +19,16 @@ const editor = ref<{ editor: EditorClass }>();
 
 <style scoped lang="scss">
 .demo {
-  padding: 20vh var(--spacing-large);
+  padding: 20vh 2rem;
 
   &-container {
     width: 100%;
     max-width: 1024px;
     margin: auto;
+  }
+
+  @media (max-width: 480px) {
+    padding: 4vh 2rem;
   }
 }
 </style>
