@@ -36,7 +36,7 @@ export const defaultExtensions = [
     },
     listItem: {
       HTMLAttributes: {
-        class: "list-item mb-2",
+        class: "list-item",
       },
     },
     blockquote: {

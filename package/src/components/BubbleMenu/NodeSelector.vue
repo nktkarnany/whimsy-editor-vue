@@ -1,5 +1,5 @@
 <template>
-  <n-popover ref="popover" trigger="click" class="p-2">
+  <n-popover ref="popover" trigger="click" class="node-selector">
     <template #trigger>
       <n-button variant="text">
         {{ activeItem?.name }} <ChevronDown />
@@ -135,5 +135,3 @@ const activeItem = computed(
     }
 );
 </script>
-
-<style scoped></style>

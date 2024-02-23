@@ -1,3 +1,12 @@
+.whimsy-editor {
+  position: relative;
+  background-color: var(--white);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  border: 1px solid var(--gray-300);
+  padding: var(--spacing-large);
+  border-radius: 0.5rem;
+}
+
 .bubble-menu {
   display: flex;
   align-items: center;
@@ -7,6 +16,26 @@
   border: 1px solid var(--gray-300);
   border-radius: 0.125rem;
   padding: var(--spacing-small);
+}
+
+.node-selector {
+  padding: var(--spacing-small);
+}
+
+.link-selector {
+  position: relative;
+
+  &__form {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--gray-200);
+    margin-top: var(--spacing-medium);
+    margin-bottom: var(--spacing-medium);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+      0 4px 6px -4px rgb(0 0 0 / 0.1);
+  }
 }
 
 h1.heading {
@@ -99,4 +128,17 @@ p.paragraph {
   text-decoration: underline;
   text-underline-offset: 4px;
   cursor: pointer;
+}
+
+.command-menu {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-small);
+  background-color: var(--white);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  border: 1px solid var(--gray-300);
+  border-radius: 0.125rem;
+  padding: var(--spacing-small);
+  height: 200px;
+  overflow: auto;
 }

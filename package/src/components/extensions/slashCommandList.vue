@@ -140,18 +140,3 @@ function scrollToSelected() {
   }
 }
 </script>
-
-<style scoped lang="scss">
-.command-menu {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-small);
-  background-color: var(--white);
-  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  border: 1px solid var(--gray-300);
-  border-radius: 0.125rem;
-  padding: var(--spacing-small);
-  height: 200px;
-  overflow: auto;
-}
-</style>

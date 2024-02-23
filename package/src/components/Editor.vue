@@ -50,8 +50,7 @@ const props = defineProps({
    */
   className: {
     type: String,
-    default:
-      "relative bg-color-white shadow-lg border border-muted border-solid p-5 rounded-lg",
+    default: "whimsy-editor",
   },
   /**
    * The default value to use for the editor.
@@ -236,5 +235,3 @@ watchEffect(() => {
   }
 });
 </script>
-
-<style scoped lang="scss"></style>

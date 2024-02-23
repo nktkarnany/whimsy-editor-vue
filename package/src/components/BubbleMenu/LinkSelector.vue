@@ -1,19 +1,14 @@
 <template>
-  <div class="position-relative">
+  <div class="link-selector">
     <n-button variant="text" @click="isOpen = !isOpen">
       <component
         :is="Link2Icon"
-        class="w-4 h-4"
         :class="{
           active: editor.isActive('link'),
         }"
       />
     </n-button>
-    <n-form
-      v-if="isOpen"
-      @submit.prevent="submit"
-      class="fixed d-flex-center bg-gray-200 my-3"
-    >
+    <n-form v-if="isOpen" @submit.prevent="submit" class="link-selector__form">
       <n-input
         ref="inputRef"
         type="text"
@@ -62,7 +57,13 @@ defineProps({
 
 const isOpen = ref(false);
 
+defineExpose({ closePopup });
+
 const inputRef = ref<HTMLInputElement | null>(null);
+
+function closePopup() {
+  isOpen.value = false;
+}
 
 function submit(e: any) {
   console.log(e);

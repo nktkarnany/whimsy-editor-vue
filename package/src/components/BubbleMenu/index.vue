@@ -1,11 +1,14 @@
 <template>
   <BubbleMenu
     :editor="editor"
-    :tippy-options="{ maxWidth: '100%' }"
+    :tippy-options="{
+      maxWidth: '100%',
+      onClickOutside: clickedOutside,
+    }"
     class="bubble-menu"
   >
     <NodeSelector :editor="editor" />
-    <LinkSelector :editor="editor" />
+    <LinkSelector ref="linkSelectorRef" :editor="editor" />
     <n-button
       v-for="(item, index) in items"
       :key="index"
@@ -24,7 +27,7 @@
 
 <script setup lang="ts">
 import { BubbleMenu } from "@tiptap/vue-3";
-import { PropType } from "vue";
+import { PropType, ref } from "vue";
 import { Editor } from "@tiptap/core";
 import {
   BoldIcon,
@@ -38,6 +41,8 @@ import { NButton } from "naive-ui";
 
 import NodeSelector from "./NodeSelector.vue";
 import LinkSelector from "./LinkSelector.vue";
+
+const linkSelectorRef = ref<typeof LinkSelector | null>(null);
 
 const props = defineProps({
   editor: {
@@ -78,6 +83,8 @@ const items = [
     icon: CodeIcon,
   },
 ];
-</script>
 
-<style scoped lang="scss"></style>
+function clickedOutside() {
+  linkSelectorRef.value?.closePopup();
+}
+</script>
