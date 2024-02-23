@@ -1,7 +1,7 @@
 <template>
   <svg
     aria-hidden="true"
-    class="animate-spin fill-stone-600 text-stone-200"
+    class="animate-spin"
     :class="dimensions"
     viewBox="0 0 100 101"
     fill="none"
@@ -22,7 +22,7 @@
 defineProps({
   dimensions: {
     type: String,
-    default: "h-4 w-4",
+    default: "",
     required: false,
   },
 });

@@ -20,6 +20,12 @@
 
 .node-selector {
   padding: var(--spacing-small);
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-small);
+  }
 }
 
 .link-selector {
@@ -30,11 +36,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    left: 0;
     background-color: var(--gray-200);
     margin-top: var(--spacing-medium);
     margin-bottom: var(--spacing-medium);
     box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
       0 4px 6px -4px rgb(0 0 0 / 0.1);
+
+    &-input {
+      flex: 1;
+      font-size: 0.875rem;
+      background-color: var(--white);
+      outline: none;
+    }
   }
 }
 
@@ -68,20 +83,24 @@ p.paragraph {
   margin-bottom: 1.3333333em;
 }
 
-.not-prose p.paragraph {
-  margin: 0;
-}
-
 .bullet-list {
   list-style-type: disc;
   list-style-position: outside;
   line-height: 0.75rem;
+
+  p.paragraph {
+    margin: 0;
+  }
 }
 
 .ordered-list {
   list-style-type: decimal;
   list-style-position: outside;
   line-height: 0.75rem;
+
+  p.paragraph {
+    margin: 0;
+  }
 }
 
 .list-item {
@@ -130,6 +149,21 @@ p.paragraph {
   cursor: pointer;
 }
 
+.task-list {
+  padding-left: var(--spacing-medium);
+
+  &__item {
+    display: flex;
+    align-items: center;
+    margin-top: var(--spacing-medium);
+    margin-bottom: var(--spacing-medium);
+
+    p.paragraph {
+      margin: 0;
+    }
+  }
+}
+
 .command-menu {
   display: flex;
   flex-direction: column;
@@ -141,4 +175,18 @@ p.paragraph {
   padding: var(--spacing-small);
   height: 200px;
   overflow: auto;
+
+  &__container {
+    display: flex;
+    cursor: pointer;
+
+    &.active {
+      background-color: var(--gray-400);
+    }
+
+    &-item {
+      text-align: left;
+      flex: 1;
+    }
+  }
 }

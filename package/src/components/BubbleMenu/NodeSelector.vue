@@ -5,14 +5,12 @@
         {{ activeItem?.name }} <ChevronDown />
       </n-button>
     </template>
-    <div class="flex-column small-gap">
+    <div class="node-selector__menu">
       <n-button
         v-for="(item, index) in items"
         :key="index"
         variant="text"
-        :class="`justify-start ${
-          activeItem.name === item.name ? 'active' : ''
-        }`"
+        :class="`${activeItem.name === item.name ? 'active' : ''}`"
         @click="
           () => {
             item.command();

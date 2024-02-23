@@ -3,7 +3,8 @@
     :editor="editor"
     :tippy-options="{
       maxWidth: '100%',
-      onClickOutside: clickedOutside,
+      onHidden: onHidden,
+      onClickOutside: () => {},
     }"
     class="bubble-menu"
   >
@@ -84,7 +85,7 @@ const items = [
   },
 ];
 
-function clickedOutside() {
+function onHidden() {
   linkSelectorRef.value?.closePopup();
 }
 </script>

@@ -2,15 +2,15 @@
   <div v-if="items.length > 0" ref="commandListContainer" class="command-menu">
     <div
       v-for="(item, index) in items"
-      class="d-flex cursor-pointer"
+      class="command-menu__container"
       :key="index"
-      :class="index === selectedIndex ? 'bg-gray-400' : ''"
+      :class="index === selectedIndex ? 'active' : ''"
       @click="selectItem(index)"
     >
       <component :is="item.icon" size="18" />
-      <div class="text-left flex-1">
-        <p class="font-medium">{{ item.title }}</p>
-        <p class="text-xs color-gray-600">{{ item.description }}</p>
+      <div class="command-menu__container-item">
+        <p>{{ item.title }}</p>
+        <p>{{ item.description }}</p>
       </div>
     </div>
   </div>

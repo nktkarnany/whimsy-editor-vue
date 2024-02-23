@@ -111,12 +111,12 @@ export const defaultExtensions = [
   }),
   TaskList.configure({
     HTMLAttributes: {
-      class: "not-prose pl-3",
+      class: "task-list",
     },
   }),
   TaskItem.configure({
     HTMLAttributes: {
-      class: "d-flex align-center my-3",
+      class: "task-list__item",
     },
     nested: true,
   }),
