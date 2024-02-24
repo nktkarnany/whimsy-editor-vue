@@ -1,14 +1,5 @@
 @import url("https://fonts.cdnfonts.com/css/open-sans");
 
-/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
-
-/* Document
-   ========================================================================== */
-
-* {
-  box-sizing: border-box;
-}
-
 /**
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
@@ -372,8 +363,8 @@ template {
   scrollbar-width: none; /* Firefox */
 
   body {
-    background-color: var(--white);
-    color: var(--text-color-normal);
+    background-color: #fff;
+    color: #212529;
     font-family: "Open Sans", sans-serif;
   }
 }
