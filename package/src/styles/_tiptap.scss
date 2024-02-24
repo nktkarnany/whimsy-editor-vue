@@ -31,15 +31,34 @@
   border: 1px solid var(--gray-300);
   border-radius: 0.125rem;
   padding: var(--spacing-small);
+
+  .whimsy-btn {
+    padding: var(--spacing-small);
+    cursor: pointer;
+    outline: none;
+    background-color: var(--white);
+    display: flex;
+
+    &.active {
+      background-color: var(--gray-300);
+    }
+  }
 }
 
 .node-selector {
+  position: relative;
   padding: var(--spacing-small);
 
   &__menu {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-small);
+    position: absolute;
+    background-color: var(--gray-200);
+    margin-top: var(--spacing-medium);
+    margin-bottom: var(--spacing-medium);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+      0 4px 6px -4px rgb(0 0 0 / 0.1);
   }
 }
 

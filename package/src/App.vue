@@ -1,10 +1,7 @@
 <template>
   <div class="demo">
     <div class="demo-container">
-      <Editor
-        completion-api="http://localhost:3000/api/generate"
-        ref="editor"
-      />
+      <Editor completion-api="" ref="editor" />
     </div>
   </div>
 </template>

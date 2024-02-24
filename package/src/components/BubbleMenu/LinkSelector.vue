@@ -1,25 +1,26 @@
 <template>
   <div class="link-selector">
-    <n-button variant="text" @click="isOpen = !isOpen">
-      <component
-        :is="Link2Icon"
-        :class="{
-          active: editor.isActive('link'),
-        }"
-      />
-    </n-button>
-    <n-form v-if="isOpen" @submit.prevent="submit" class="link-selector__form">
-      <n-input
+    <button
+      class="whimsy-btn"
+      @click="isOpen = !isOpen"
+      :class="{
+        active: editor.isActive('link'),
+      }"
+    >
+      <component :is="Link2Icon" />
+    </button>
+    <form v-if="isOpen" @submit.prevent="submit" class="link-selector__form">
+      <input
         ref="inputRef"
-        type="text"
+        type="url"
         placeholder="Paste a link"
         class="link-selector__form-input"
         :defaultValue="editor.getAttributes('link').href || ''"
       />
 
-      <n-button
+      <button
         v-if="editor.getAttributes('link').href"
-        variant="text"
+        class="whimsy-btn"
         @click="
           () => {
             editor.chain().focus().unsetLink().run();
@@ -28,11 +29,11 @@
         "
       >
         <Trash />
-      </n-button>
-      <n-button v-else variant="text">
+      </button>
+      <button v-else class="whimsy-btn">
         <Check />
-      </n-button>
-    </n-form>
+      </button>
+    </form>
   </div>
 </template>
 
@@ -40,8 +41,6 @@
 import { Editor } from "@tiptap/core";
 import { Link2Icon, Check, Trash } from "lucide-vue-next";
 import { PropType, ref } from "vue";
-
-import { NButton, NForm, NInput } from "naive-ui";
 
 const props = defineProps({
   editor: {

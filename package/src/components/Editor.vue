@@ -1,10 +1,10 @@
 <template>
-  <n-element :class="className">
+  <div :class="className">
     <slot name="bubble-menu">
       <BubbleMenu v-if="editor" :editor="editor" />
     </slot>
     <EditorContent :editor="editor" />
-  </n-element>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -32,8 +32,6 @@ import BubbleMenu from "../components/BubbleMenu/index.vue";
 
 // Importing helpers
 import { getPrevText } from "../lib/editor";
-
-import { NElement } from "naive-ui";
 
 type Format = "html" | "json";
 

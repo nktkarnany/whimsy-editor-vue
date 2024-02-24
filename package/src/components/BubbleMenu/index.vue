@@ -10,19 +10,14 @@
   >
     <NodeSelector :editor="editor" />
     <LinkSelector ref="linkSelectorRef" :editor="editor" />
-    <n-button
+    <button
       v-for="(item, index) in items"
       :key="index"
       @click="item.command()"
-      variant="text"
+      :class="`whimsy-btn ${item.isActive() ? 'active' : ''}`"
     >
-      <component
-        :is="item.icon"
-        :class="{
-          active: item.isActive(),
-        }"
-      />
-    </n-button>
+      <component :is="item.icon" />
+    </button>
   </BubbleMenu>
 </template>
 
@@ -37,8 +32,6 @@ import {
   StrikethroughIcon,
   CodeIcon,
 } from "lucide-vue-next";
-
-import { NButton } from "naive-ui";
 
 import NodeSelector from "./NodeSelector.vue";
 import LinkSelector from "./LinkSelector.vue";

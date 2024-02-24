@@ -1,35 +1,28 @@
 <template>
-  <n-popover ref="popover" trigger="click" class="node-selector">
-    <template #trigger>
-      <n-button variant="text">
-        {{ activeItem?.name }} <ChevronDown />
-      </n-button>
-    </template>
+  <div class="node-selector">
+    <button class="whimsy-btn">{{ activeItem?.name }} <ChevronDown /></button>
     <div class="node-selector__menu">
-      <n-button
+      <button
         v-for="(item, index) in items"
         :key="index"
-        variant="text"
+        class="whimsy-btn"
         :class="`${activeItem.name === item.name ? 'active' : ''}`"
         @click="
           () => {
             item.command();
-            popover?.setShow(false);
           }
         "
       >
-        <template #icon>
-          <component :is="item.icon" class="icon" />
-        </template>
+        <component :is="item.icon" class="icon" />
         <span>{{ item.name }}</span>
         <Check v-if="activeItem.name === item.name" />
-      </n-button>
+      </button>
     </div>
-  </n-popover>
+  </div>
 </template>
 
 <script setup lang="ts">
-import { PropType, computed, ref } from "vue";
+import { PropType, computed } from "vue";
 
 import { Editor } from "@tiptap/core";
 import {
@@ -45,16 +38,12 @@ import {
   CheckSquare,
 } from "lucide-vue-next";
 
-import { NPopover, NButton } from "naive-ui";
-
 const props = defineProps({
   editor: {
     type: Object as PropType<Editor>,
     required: true,
   },
 });
-
-const popover = ref<typeof NPopover | null>(null);
 
 const items = [
   {
