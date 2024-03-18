@@ -25,6 +25,11 @@ import { useCompletion } from "ai/vue";
 // Importing defaults
 import { defaultEditorContent } from "../lib/default-content";
 import { defaultExtensions } from "./extensions";
+import {
+  type SlashCommandItem,
+  SlashCommand,
+} from "./extensions/slashExtension";
+import { defaultItems } from "./extensions/slashCommandItems";
 import { defaultEditorProps } from "../lib/props";
 
 // Importing bubble menu
@@ -118,6 +123,22 @@ const props = defineProps({
     type: String,
     default: "whimsy__content",
   },
+  /**
+   * Placeholder text for the editor.
+   * Defaults to "Type something here...".
+   */
+  placeholder: {
+    type: String,
+    default: "Type something here... or ++",
+  },
+  /**
+   * List of commands that can be accessed using the slash(/).
+   * Defaults to [].
+   */
+  slashCommands: {
+    type: Array as PropType<SlashCommandItem[]>,
+    default: defaultItems,
+  },
 });
 
 provide("completionApi", props.completionApi);
@@ -131,7 +152,11 @@ const debouncedUpdate = useDebounceFn(({ editor }) => {
 }, props.debounceDuration);
 
 const editor = useEditor({
-  extensions: [...defaultExtensions, ...props.extensions],
+  extensions: [
+    ...defaultExtensions({ placeholder: props.placeholder }),
+    SlashCommand(props.slashCommands),
+    ...props.extensions,
+  ],
   editorProps: {
     ...defaultEditorProps,
     ...props.editorProps,

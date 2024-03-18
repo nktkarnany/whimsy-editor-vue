@@ -10,9 +10,16 @@ import TaskList from "@tiptap/extension-task-list";
 import { Markdown } from "tiptap-markdown";
 import Highlight from "@tiptap/extension-highlight";
 import { InputRule } from "@tiptap/core";
-import SlashCommand from "./slashExtension";
 
-export const defaultExtensions = [
+interface ExtensionOptions {
+  placeholder?: string;
+}
+
+type DefaultExtensionsFunction = (options?: ExtensionOptions) => any[];
+
+export const defaultExtensions: DefaultExtensionsFunction = (
+  options?: ExtensionOptions
+) => [
   StarterKit.configure({
     heading: {
       HTMLAttributes: {
@@ -99,7 +106,7 @@ export const defaultExtensions = [
       if (node.type.name === "heading") {
         return `Heading ${node.attrs.level}`;
       }
-      return "Press '/' for commands, or '++' for AI autocomplete...";
+      return options?.placeholder || "Type something here...";
     },
     includeChildren: true,
   }),
@@ -124,5 +131,4 @@ export const defaultExtensions = [
     html: false,
     transformCopiedText: true,
   }),
-  SlashCommand,
 ];
