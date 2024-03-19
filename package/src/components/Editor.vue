@@ -139,6 +139,23 @@ const props = defineProps({
     type: Array as PropType<SlashCommandItem[]>,
     default: defaultItems,
   },
+  /**
+   * Determines the default height of the input element.
+   * Defaults to 3.
+   */
+  lines: {
+    type: Number,
+    default: 3,
+  },
+  /**
+   * Determines the max height of the input element
+   * after which the content overflow and appears with the scroll.
+   * Defaults to 3.
+   */
+  maxLines: {
+    type: Number,
+    default: 3,
+  },
 });
 
 provide("completionApi", props.completionApi);
