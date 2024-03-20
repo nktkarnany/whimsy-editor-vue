@@ -9,7 +9,7 @@
     >
       <component :is="item.icon" size="18" />
       <div class="command-menu__container-item">
-        <p>{{ item.title }}</p>
+        <h3>{{ item.title }}</h3>
         <p>{{ item.description }}</p>
       </div>
     </div>
@@ -19,13 +19,13 @@
 <script setup lang="ts">
 import { inject, PropType, ref, watch } from "vue";
 import { Editor, Range } from "@tiptap/core";
-import { SuggestionItem } from "./slashExtension";
+import { SlashCommandItem } from "./slashExtension";
 import { useCompletion } from "ai/vue";
 import { getPrevText } from "../../lib/editor";
 
 const props = defineProps({
   items: {
-    type: Array as PropType<SuggestionItem[]>,
+    type: Array as PropType<SlashCommandItem[]>,
     required: true,
   },
   command: {

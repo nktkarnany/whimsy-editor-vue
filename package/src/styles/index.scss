@@ -1,4 +1,4 @@
-.whimsy-editor {
+:root {
   --white: #fff;
   --gray-200: #f8f9fa;
   --gray-300: #dee2e6;
@@ -12,23 +12,18 @@
 
   --bg-color: #fff;
   --border-color: #dee2e6;
-  --general-spacing: 24px;
+  --general-spacing: 1rem; // 24px
+  --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
 
+.whimsy-editor {
   position: relative;
   background-color: var(--bg-color);
-  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  box-shadow: var(--box-shadow);
   border: 1px solid var(--border-color);
   padding: var(--general-spacing);
   border-radius: 0.5rem;
-}
-
-.bubble-menu {
-  display: flex;
-  align-items: center;
-  background-color: var(--bg-color);
-  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  border: 1px solid var(--border-color);
-  border-radius: 0.125rem;
 }
 
 .whimsy-btn {
@@ -48,15 +43,55 @@
   }
 }
 
+.command-menu {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-color);
+  box-shadow: var(--box-shadow);
+  border: 1px solid var(--border-color);
+  border-radius: 0.125rem;
+  height: 200px;
+  overflow: auto;
+
+  &__container {
+    display: flex;
+    cursor: pointer;
+    gap: calc(var(--general-spacing) * 0.2);
+    padding: calc(var(--general-spacing) * 0.67)
+      calc(var(--general-spacing) * 0.4166);
+
+    &.active {
+      background-color: var(--gray-400);
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      gap: calc(var(--general-spacing) * 0.2);
+      text-align: left;
+      flex: 1;
+    }
+  }
+}
+
+.bubble-menu {
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-color);
+  box-shadow: var(--box-shadow);
+  border: 1px solid var(--border-color);
+  border-radius: 0.125rem;
+}
+
 .node-selector {
   position: relative;
 
   &__menu {
     display: flex;
     flex-direction: column;
-    gap: var(--general-spacing);
     position: absolute;
     background-color: var(--gray-200);
+    border: 1px solid var(--border-color);
     margin-top: var(--general-spacing);
     margin-bottom: var(--general-spacing);
     box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
@@ -75,6 +110,7 @@
     width: 100%;
     left: 0;
     background-color: var(--gray-200);
+    border: 1px solid var(--border-color);
     margin-top: var(--general-spacing);
     margin-bottom: var(--general-spacing);
     box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
@@ -196,33 +232,6 @@ p.paragraph {
 
     p.paragraph {
       margin: 0;
-    }
-  }
-}
-
-.command-menu {
-  display: flex;
-  flex-direction: column;
-  gap: var(--general-spacing);
-  background-color: var(--bg-color);
-  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  border: 1px solid var(--border-color);
-  border-radius: 0.125rem;
-  padding: var(--general-spacing);
-  height: 200px;
-  overflow: auto;
-
-  &__container {
-    display: flex;
-    cursor: pointer;
-
-    &.active {
-      background-color: var(--gray-400);
-    }
-
-    &-item {
-      text-align: left;
-      flex: 1;
     }
   }
 }
