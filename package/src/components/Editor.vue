@@ -1,5 +1,5 @@
 <template>
-  <div :class="className">
+  <div ref="whimsy" :class="`whimsy-editor ${className}`">
     <slot name="bubble-menu">
       <BubbleMenu v-if="editor" :editor="editor" />
     </slot>
@@ -9,7 +9,14 @@
 
 <script setup lang="ts">
 // Importing from vue
-import { watchEffect, type PropType, ref, watch, provide } from "vue";
+import {
+  watchEffect,
+  type PropType,
+  ref,
+  watch,
+  provide,
+  onMounted,
+} from "vue";
 
 // Importing from tiptap
 import { useEditor, EditorContent, Content, Extension } from "@tiptap/vue-3";
@@ -51,11 +58,11 @@ const props = defineProps({
   },
   /**
    * Additional classes to add to the editor container.
-   * Defaults to "whimsy-editor".
+   * Defaults to "".
    */
   className: {
     type: String,
-    default: "whimsy-editor",
+    default: "",
   },
   /**
    * The default value to use for the editor.
@@ -156,6 +163,31 @@ const props = defineProps({
     type: Number,
     default: 3,
   },
+});
+
+const whimsy = ref<HTMLElement | null>(null);
+
+onMounted(() => {
+  // Accessing the DOM element using template refs
+  const element = whimsy.value;
+
+  // Setting CSS variables using JavaScript
+  if (element && element?.style) {
+    element.style.setProperty("--primary", "#007bff");
+    element.style.setProperty("--secondary", "#6c757d");
+    element.style.setProperty("--font-color", "#212529");
+    element.style.setProperty("--font-muted-color", "#6c757d");
+    element.style.setProperty("--bg-color", "#ffffff");
+    element.style.setProperty("--code-bg-color", "#f0f0f0");
+    element.style.setProperty(
+      "--box-shadow",
+      "0 0.125em 0.25em rgba(0, 0, 0, 0.1)"
+    );
+    element.style.setProperty("--border-color", "#dee2e6");
+    element.style.setProperty("--general-spacing", "1em");
+    element.style.setProperty("--border-radius", "0.25em");
+    element.style.setProperty("--base-font", "1em");
+  }
 });
 
 provide("completionApi", props.completionApi);

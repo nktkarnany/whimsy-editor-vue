@@ -1,29 +1,203 @@
-:root {
-  --white: #fff;
-  --gray-200: #f8f9fa;
-  --gray-300: #dee2e6;
-  --gray-400: #ced4da;
-  --gray-500: #adb5bd;
-  --gray-600: #6c757d;
-  --gray-700: #495057;
-  --gray-800: #343a40;
-  --gray-900: #212529;
-  --black: #000;
-
-  --bg-color: #fff;
-  --border-color: #dee2e6;
-  --general-spacing: 1rem; // 24px
-  --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
-    0 4px 6px -4px rgb(0 0 0 / 0.1);
-}
-
+/* Whimsy Editor Styles */
 .whimsy-editor {
   position: relative;
   background-color: var(--bg-color);
   box-shadow: var(--box-shadow);
-  border: 1px solid var(--border-color);
-  padding: var(--general-spacing);
-  border-radius: 0.5rem;
+  border: 0.0625em solid var(--border-color);
+  padding: calc(var(--general-spacing) * 1.25) var(--general-spacing);
+  border-radius: var(--border-radius);
+}
+
+/* ProseMirror Styles */
+.whimsy-editor .ProseMirror {
+  outline: none;
+  font-size: var(--base-font);
+  line-height: calc(var(--base-font) * 1.5);
+}
+
+.whimsy-editor .ProseMirror > :first-child {
+  margin-top: 0;
+}
+
+.whimsy-editor .ProseMirror .is-editor-empty:first-child::before,
+.whimsy-editor .ProseMirror .is-empty::before {
+  content: attr(data-placeholder);
+  float: left;
+  color: var(--font-muted-color);
+  opacity: 0.3;
+  pointer-events: none;
+  height: 0;
+}
+
+/* Heading Styles */
+.whimsy-editor h1.heading {
+  font-size: 2.6666667em;
+  font-weight: 400;
+  margin-top: 0;
+  margin-bottom: 0.8333333em;
+  line-height: 1;
+}
+
+.whimsy-editor h2.heading {
+  font-size: 1.6666667em;
+  font-weight: 400;
+  margin-top: 1.8666667em;
+  margin-bottom: 1.0666667em;
+  line-height: 1.3333333;
+}
+
+.whimsy-editor h3.heading {
+  font-size: 1.3333333em;
+  font-weight: 400;
+  margin-top: 1.6666667em;
+  margin-bottom: 0.6666667em;
+  line-height: 1.5;
+}
+
+/* Paragraph Styles */
+.whimsy-editor p.paragraph {
+  font-weight: 400;
+  margin-top: 1.3333333em;
+  margin-bottom: 1.3333333em;
+}
+
+/* List Styles */
+.whimsy-editor .bullet-list,
+.whimsy-editor .ordered-list {
+  list-style-position: outside;
+  line-height: 0.75em;
+
+  &.bullet-list {
+    list-style-type: disc;
+  }
+
+  &.ordered-list {
+    list-style-type: decimal;
+  }
+
+  .list-item {
+    line-height: 1.5;
+    margin-bottom: var(--general-spacing);
+  }
+}
+
+/* Blockquote Styles */
+.whimsy-editor .blockquote {
+  font-size: 1.125em;
+  line-height: 1.7777778;
+  margin-top: 1.6666667em;
+  margin-bottom: 1.6666667em;
+  padding-left: 1em;
+  border: 0.0625em solid var(--font-muted-color);
+  border-left-width: 0.25em;
+}
+
+/* Code Block Styles */
+.whimsy-editor .code-block,
+.whimsy-editor .code {
+  border-radius: var(--border-radius);
+  font-size: 0.875em;
+  line-height: 1.25em;
+
+  &.code-block {
+    background-color: var(--code-bg-color);
+    color: var(--font-color);
+    padding: var(--general-spacing);
+  }
+
+  &.code {
+    background-color: var(--code-bg-color);
+    color: var(--font-color);
+    padding: calc(var(--general-spacing) * 0.5);
+  }
+}
+
+/* Horizontal Rule Styles */
+.whimsy-editor .horizontal-rule {
+  margin-top: var(--general-spacing);
+  margin-bottom: var(--general-spacing);
+  border-top: 0.0625em solid var(--border-color);
+}
+
+/* Link Styles */
+.whimsy-editor .link {
+  color: var(--secondary);
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+  cursor: pointer;
+}
+
+/* Task List Styles */
+.whimsy-editor .task-list {
+  padding-left: var(--general-spacing);
+
+  &__item {
+    display: flex;
+    align-items: center;
+    margin-top: var(--general-spacing);
+    margin-bottom: var(--general-spacing);
+
+    .paragraph {
+      margin: 0;
+    }
+  }
+}
+
+/* Custom TODO list checkboxes – shoutout to this awesome tutorial: https://moderncss.dev/pure-css-custom-checkbox-style/ */
+
+ul[data-type="taskList"] li > label {
+  margin-right: 0.2em;
+  user-select: none;
+}
+
+@media screen and (max-width: 768px) {
+  ul[data-type="taskList"] li > label {
+    margin-right: 0.5em;
+  }
+}
+
+ul[data-type="taskList"] li > label input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: var(--bg-color);
+  margin: 0;
+  cursor: pointer;
+  width: 1.2em;
+  height: 1.2em;
+  position: relative;
+  border: 2px solid var(--font-color);
+  margin-right: 0.3em;
+  display: grid;
+  place-content: center;
+
+  &:hover {
+    background-color: var(--gray-200);
+  }
+
+  &:active {
+    background-color: var(--gray-300);
+  }
+
+  &::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em;
+    transform-origin: center;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  }
+
+  &:checked::before {
+    transform: scale(1);
+  }
+}
+
+ul[data-type="taskList"] li[data-checked="true"] > div > p {
+  color: var(--font-muted-color); /* Changed color to font-muted-color */
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
 }
 
 .whimsy-btn {
@@ -49,7 +223,7 @@
   background-color: var(--bg-color);
   box-shadow: var(--box-shadow);
   border: 1px solid var(--border-color);
-  border-radius: 0.125rem;
+  border-radius: 0.125em;
   height: 200px;
   overflow: auto;
 
@@ -123,197 +297,4 @@
       outline: none;
     }
   }
-}
-
-h1.heading {
-  font-size: 2.6666667em;
-  font-weight: 400;
-  margin-top: 0;
-  margin-bottom: 0.8333333em;
-  line-height: 1;
-}
-
-h2.heading {
-  font-size: 1.6666667em;
-  font-weight: 400;
-  margin-top: 1.8666667em;
-  margin-bottom: 1.0666667em;
-  line-height: 1.3333333;
-}
-
-h3.heading {
-  font-size: 1.3333333em;
-  font-weight: 400;
-  margin-top: 1.6666667em;
-  margin-bottom: 0.6666667em;
-  line-height: 1.5;
-}
-
-p.paragraph {
-  font-weight: 400;
-  margin-top: 1.3333333em;
-  margin-bottom: 1.3333333em;
-}
-
-.bullet-list {
-  list-style-type: disc;
-  list-style-position: outside;
-  line-height: 0.75rem;
-
-  p.paragraph {
-    margin: 0;
-  }
-}
-
-.ordered-list {
-  list-style-type: decimal;
-  list-style-position: outside;
-  line-height: 0.75rem;
-
-  p.paragraph {
-    margin: 0;
-  }
-}
-
-.list-item {
-  line-height: 1.5;
-  margin-bottom: var(--general-spacing);
-}
-
-.blockquote {
-  font-size: 1.125rem;
-  line-height: 1.7777778;
-  margin-top: 1.6666667em;
-  margin-bottom: 1.6666667em;
-  padding-left: 1em;
-  border: 0px solid var(--gray-900);
-  border-left-width: 4px;
-}
-
-.code-block {
-  border-radius: 0.125rem;
-  background-color: var(--gray-200);
-  padding: var(--general-spacing);
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  color: var(--gray-700);
-}
-
-.code {
-  border-radius: 0.125rem;
-  background-color: var(--gray-300);
-  padding: calc(var(--general-spacing) * 0.25);
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  color: var(--gray-800);
-}
-
-.horizontal-rule {
-  margin-top: var(--general-spacing);
-  margin-bottom: var(--general-spacing);
-  border-top: 0.5px solid var(--gray-500);
-}
-
-.link {
-  color: var(--gray-600);
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  cursor: pointer;
-}
-
-.task-list {
-  padding-left: var(--general-spacing);
-
-  &__item {
-    display: flex;
-    align-items: center;
-    margin-top: var(--general-spacing);
-    margin-bottom: var(--general-spacing);
-
-    p.paragraph {
-      margin: 0;
-    }
-  }
-}
-
-.ProseMirror {
-  outline: none;
-  font-size: 1rem;
-  line-height: 1.5rem;
-}
-
-.ProseMirror > :first-child {
-  margin-top: 0;
-}
-
-.ProseMirror .is-editor-empty:first-child::before {
-  content: attr(data-placeholder);
-  float: left;
-  color: var(--gray-500);
-  pointer-events: none;
-  height: 0;
-}
-.ProseMirror .is-empty::before {
-  content: attr(data-placeholder);
-  float: left;
-  color: hsl(var(--gray-500));
-  pointer-events: none;
-  height: 0;
-}
-
-/* Custom TODO list checkboxes – shoutout to this awesome tutorial: https://moderncss.dev/pure-css-custom-checkbox-style/ */
-
-ul[data-type="taskList"] li > label {
-  margin-right: 0.2rem;
-  user-select: none;
-}
-
-@media screen and (max-width: 768px) {
-  ul[data-type="taskList"] li > label {
-    margin-right: 0.5rem;
-  }
-}
-
-ul[data-type="taskList"] li > label input[type="checkbox"] {
-  -webkit-appearance: none;
-  appearance: none;
-  background-color: var(--bg-color);
-  margin: 0;
-  cursor: pointer;
-  width: 1.2em;
-  height: 1.2em;
-  position: relative;
-  border: 2px solid var(--gray-800);
-  margin-right: 0.3rem;
-  display: grid;
-  place-content: center;
-
-  &:hover {
-    background-color: var(--gray-200);
-  }
-
-  &:active {
-    background-color: var(--gray-300);
-  }
-
-  &::before {
-    content: "";
-    width: 0.65em;
-    height: 0.65em;
-    transform: scale(0);
-    transition: 120ms transform ease-in-out;
-    box-shadow: inset 1em 1em;
-    transform-origin: center;
-    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
-  }
-
-  &:checked::before {
-    transform: scale(1);
-  }
-}
-
-ul[data-type="taskList"] li[data-checked="true"] > div > p {
-  color: var(--gray-500);
-  text-decoration: line-through;
-  text-decoration-thickness: 2px;
 }
