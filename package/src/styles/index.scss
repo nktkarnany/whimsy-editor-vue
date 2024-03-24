@@ -1,18 +1,19 @@
 /* Whimsy Editor Styles */
 .whimsy-editor {
   position: relative;
-  background-color: var(--bg-color);
-  box-shadow: var(--box-shadow);
-  border: 0.0625em solid var(--border-color);
-  padding: calc(var(--general-spacing) * 1.25) var(--general-spacing);
-  border-radius: var(--border-radius);
+  background-color: var(--whimsy-bg-color);
+  box-shadow: var(--whimsy-box-shadow);
+  border: 0.0625em solid var(--whimsy-border-color);
+  padding: calc(var(--whimsy-general-spacing) * 1.25)
+    var(--whimsy-general-spacing);
+  border-radius: var(--whimsy-border-radius);
 }
 
 /* ProseMirror Styles */
 .whimsy-editor .ProseMirror {
   outline: none;
-  font-size: var(--base-font);
-  line-height: calc(var(--base-font) * 1.5);
+  font-size: var(--whimsy-base-font);
+  line-height: calc(var(--whimsy-base-font) * 1.5);
 }
 
 .whimsy-editor .ProseMirror > :first-child {
@@ -23,7 +24,7 @@
 .whimsy-editor .ProseMirror .is-empty::before {
   content: attr(data-placeholder);
   float: left;
-  color: var(--font-muted-color);
+  color: var(--whimsy-font-muted-color);
   opacity: 0.3;
   pointer-events: none;
   height: 0;
@@ -77,7 +78,7 @@
 
   .list-item {
     line-height: 1.5;
-    margin-bottom: var(--general-spacing);
+    margin-bottom: var(--whimsy-general-spacing);
   }
 }
 
@@ -88,40 +89,40 @@
   margin-top: 1.6666667em;
   margin-bottom: 1.6666667em;
   padding-left: 1em;
-  border: 0.0625em solid var(--font-muted-color);
+  border: 0.0625em solid var(--whimsy-font-muted-color);
   border-left-width: 0.25em;
 }
 
 /* Code Block Styles */
 .whimsy-editor .code-block,
 .whimsy-editor .code {
-  border-radius: var(--border-radius);
+  border-radius: var(--whimsy-border-radius);
   font-size: 0.875em;
   line-height: 1.25em;
 
   &.code-block {
-    background-color: var(--code-bg-color);
-    color: var(--font-color);
-    padding: var(--general-spacing);
+    background-color: var(--whimsy-code-bg-color);
+    color: var(--whimsy-font-color);
+    padding: var(--whimsy-general-spacing);
   }
 
   &.code {
-    background-color: var(--code-bg-color);
-    color: var(--font-color);
-    padding: calc(var(--general-spacing) * 0.5);
+    background-color: var(--whimsy-code-bg-color);
+    color: var(--whimsy-font-color);
+    padding: calc(var(--whimsy-general-spacing) * 0.5);
   }
 }
 
 /* Horizontal Rule Styles */
 .whimsy-editor .horizontal-rule {
-  margin-top: var(--general-spacing);
-  margin-bottom: var(--general-spacing);
-  border-top: 0.0625em solid var(--border-color);
+  margin-top: var(--whimsy-general-spacing);
+  margin-bottom: var(--whimsy-general-spacing);
+  border-top: 0.0625em solid var(--whimsy-border-color);
 }
 
 /* Link Styles */
 .whimsy-editor .link {
-  color: var(--secondary);
+  color: var(--whimsy-secondary);
   text-decoration: underline;
   text-underline-offset: 0.25em;
   cursor: pointer;
@@ -129,13 +130,13 @@
 
 /* Task List Styles */
 .whimsy-editor .task-list {
-  padding-left: var(--general-spacing);
+  padding-left: var(--whimsy-general-spacing);
 
   &__item {
     display: flex;
     align-items: center;
-    margin-top: var(--general-spacing);
-    margin-bottom: var(--general-spacing);
+    margin-top: var(--whimsy-general-spacing);
+    margin-bottom: var(--whimsy-general-spacing);
 
     .paragraph {
       margin: 0;
@@ -159,23 +160,23 @@ ul[data-type="taskList"] li > label {
 ul[data-type="taskList"] li > label input[type="checkbox"] {
   -webkit-appearance: none;
   appearance: none;
-  background-color: var(--bg-color);
+  background-color: var(--whimsy-bg-color);
   margin: 0;
   cursor: pointer;
   width: 1.2em;
   height: 1.2em;
   position: relative;
-  border: 2px solid var(--font-color);
+  border: 2px solid var(--whimsy-font-color);
   margin-right: 0.3em;
   display: grid;
   place-content: center;
 
   &:hover {
-    background-color: var(--gray-200);
+    background-color: var(--whimsy-gray-200);
   }
 
   &:active {
-    background-color: var(--gray-300);
+    background-color: var(--whimsy-gray-300);
   }
 
   &::before {
@@ -195,53 +196,53 @@ ul[data-type="taskList"] li > label input[type="checkbox"] {
 }
 
 ul[data-type="taskList"] li[data-checked="true"] > div > p {
-  color: var(--font-muted-color); /* Changed color to font-muted-color */
+  color: var(--whimsy-font-muted-color); /* Changed color to font-muted-color */
   text-decoration: line-through;
   text-decoration-thickness: 2px;
 }
 
 .whimsy-btn {
-  padding: var(--general-spacing);
+  padding: var(--whimsy-general-spacing);
   border: 0;
   cursor: pointer;
   outline: none;
-  background-color: var(--bg-color);
+  background-color: var(--whimsy-bg-color);
   display: flex;
 
   &:hover {
-    background-color: var(--gray-300);
+    background-color: var(--whimsy-gray-300);
   }
 
   &.active {
-    background-color: var(--gray-300);
+    background-color: var(--whimsy-gray-300);
   }
 }
 
-.command-menu {
+.menu {
   display: flex;
   flex-direction: column;
-  background-color: var(--bg-color);
-  box-shadow: var(--box-shadow);
-  border: 1px solid var(--border-color);
-  border-radius: 0.125em;
+  background-color: var(--whimsy-bg-color);
+  box-shadow: var(--whimsy-box-shadow);
+  border: 0.0625em solid var(--whimsy-border-color);
+  border-radius: var(--whimsy-border-radius);
   height: 200px;
   overflow: auto;
 
-  &__container {
+  &__item {
     display: flex;
     cursor: pointer;
-    gap: calc(var(--general-spacing) * 0.2);
-    padding: calc(var(--general-spacing) * 0.67)
-      calc(var(--general-spacing) * 0.4166);
+    gap: calc(var(--whimsy-general-spacing) * 0.2);
+    padding: calc(var(--whimsy-general-spacing) * 0.67)
+      calc(var(--whimsy-general-spacing) * 0.4166);
 
     &.active {
-      background-color: var(--gray-400);
+      background-color: var(--whimsy-code-bg-color);
     }
 
-    &-item {
+    &-content {
       display: flex;
       flex-direction: column;
-      gap: calc(var(--general-spacing) * 0.2);
+      gap: calc(var(--whimsy-general-spacing) * 0.2);
       text-align: left;
       flex: 1;
     }
@@ -251,10 +252,10 @@ ul[data-type="taskList"] li[data-checked="true"] > div > p {
 .bubble-menu {
   display: flex;
   align-items: center;
-  background-color: var(--bg-color);
-  box-shadow: var(--box-shadow);
-  border: 1px solid var(--border-color);
-  border-radius: 0.125rem;
+  background-color: var(--whimsy-bg-color);
+  box-shadow: var(--whimsy-box-shadow);
+  border: 0.0625em solid var(--whimsy-border-color);
+  border-radius: var(--whimsy-border-radius);
 }
 
 .node-selector {
@@ -264,12 +265,10 @@ ul[data-type="taskList"] li[data-checked="true"] > div > p {
     display: flex;
     flex-direction: column;
     position: absolute;
-    background-color: var(--gray-200);
-    border: 1px solid var(--border-color);
-    margin-top: var(--general-spacing);
-    margin-bottom: var(--general-spacing);
-    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
-      0 4px 6px -4px rgb(0 0 0 / 0.1);
+    background-color: var(--whimsy-bg-color);
+    box-shadow: var(--whimsy-box-shadow);
+    border: 0.0625em solid var(--whimsy-border-color);
+    border-radius: var(--whimsy-border-radius);
   }
 }
 
@@ -283,17 +282,15 @@ ul[data-type="taskList"] li[data-checked="true"] > div > p {
     align-items: center;
     width: 100%;
     left: 0;
-    background-color: var(--gray-200);
-    border: 1px solid var(--border-color);
-    margin-top: var(--general-spacing);
-    margin-bottom: var(--general-spacing);
-    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
-      0 4px 6px -4px rgb(0 0 0 / 0.1);
+    background-color: var(--whimsy-bg-color);
+    box-shadow: var(--whimsy-box-shadow);
+    border: 0.0625em solid var(--whimsy-border-color);
+    border-radius: var(--whimsy-border-radius);
 
     &-input {
       flex: 1;
       font-size: 0.875rem;
-      background-color: var(--bg-color);
+      background-color: var(--whimsy-bg-color);
       outline: none;
     }
   }

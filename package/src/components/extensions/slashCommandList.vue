@@ -1,14 +1,14 @@
 <template>
-  <div v-if="items.length > 0" ref="commandListContainer" class="command-menu">
+  <div v-if="items.length > 0" ref="commandListContainer" class="menu">
     <div
       v-for="(item, index) in items"
-      class="command-menu__container"
+      class="menu__item"
       :key="index"
-      :class="index === selectedIndex ? 'active' : ''"
+      :class="{ active: index === selectedIndex }"
       @click="selectItem(index)"
     >
       <component :is="item.icon" size="18" />
-      <div class="command-menu__container-item">
+      <div class="menu__item-content">
         <h3>{{ item.title }}</h3>
         <p>{{ item.description }}</p>
       </div>

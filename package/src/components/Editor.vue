@@ -1,5 +1,5 @@
 <template>
-  <div ref="whimsy" :class="`whimsy-editor ${className}`">
+  <div :class="`whimsy-editor ${className}`">
     <slot name="bubble-menu">
       <BubbleMenu v-if="editor" :editor="editor" />
     </slot>
@@ -165,29 +165,32 @@ const props = defineProps({
   },
 });
 
-const whimsy = ref<HTMLElement | null>(null);
-
 onMounted(() => {
-  // Accessing the DOM element using template refs
-  const element = whimsy.value;
+  // Create a new <style> element
+  const styleElement = document.createElement("style");
 
-  // Setting CSS variables using JavaScript
-  if (element && element?.style) {
-    element.style.setProperty("--primary", "#007bff");
-    element.style.setProperty("--secondary", "#6c757d");
-    element.style.setProperty("--font-color", "#212529");
-    element.style.setProperty("--font-muted-color", "#6c757d");
-    element.style.setProperty("--bg-color", "#ffffff");
-    element.style.setProperty("--code-bg-color", "#f0f0f0");
-    element.style.setProperty(
-      "--box-shadow",
-      "0 0.125em 0.25em rgba(0, 0, 0, 0.1)"
-    );
-    element.style.setProperty("--border-color", "#dee2e6");
-    element.style.setProperty("--general-spacing", "1em");
-    element.style.setProperty("--border-radius", "0.25em");
-    element.style.setProperty("--base-font", "1em");
-  }
+  // Define CSS rules with new variables
+  const cssRules = `
+                :root {
+                  --whimsy-primary: #007bff;
+                  --whimsy-secondary: #6c757d;
+                  --whimsy-font-color: #212529;
+                  --whimsy-font-muted-color: #6c757d;
+                  --whimsy-bg-color: #ffffff;
+                  --whimsy-code-bg-color: #f0f0f0;
+                  --whimsy-box-shadow: 0 0.125em 0.25em rgba(0, 0, 0, 0.1);
+                  --whimsy-border-color: #dee2e6;
+                  --whimsy-general-spacing: 1em;
+                  --whimsy-border-radius: 0.25em;
+                  --whimsy-base-font: 1em;
+                }
+            `;
+
+  // Set the CSS rules to the <style> element
+  styleElement.textContent = cssRules;
+
+  // Append the <style> element to the <head> of the document
+  document.head.appendChild(styleElement);
 });
 
 provide("completionApi", props.completionApi);
