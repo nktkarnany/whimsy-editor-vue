@@ -16,6 +16,6 @@
   "dependencies": {
     "ai": "^2.2.31",
     "openai": "^4.26.0",
-    "whimsy-editor-vue": "^0.0.8"
+    "whimsy-editor-vue": "^0.0.11"
   }
 }
