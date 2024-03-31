@@ -177,7 +177,7 @@ onMounted(() => {
                   --whimsy-font-color: #212529;
                   --whimsy-font-muted-color: #6c757d;
                   --whimsy-bg-color: #ffffff;
-                  --whimsy-code-bg-color: #f0f0f0;
+                  --whimsy-code-bg-color: #dee2e6;
                   --whimsy-box-shadow: 0 0.125em 0.25em rgba(0, 0, 0, 0.1);
                   --whimsy-border-color: #dee2e6;
                   --whimsy-general-spacing: 1em;
