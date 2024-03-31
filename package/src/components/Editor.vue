@@ -47,6 +47,19 @@ import { getPrevText } from "../lib/editor";
 
 type Format = "html" | "json";
 
+type StyleVariables = {
+  linkColor: string;
+  fontColor: string;
+  fontMutedColor: string;
+  bgColor: string;
+  codeBgColor: string;
+  boxShadow: string;
+  borderColor: string;
+  generalSpacing: string;
+  borderRadius: string;
+  baseFont: string;
+};
+
 const props = defineProps({
   /**
    * The API route to use for the OpenAI completion API.
@@ -163,6 +176,26 @@ const props = defineProps({
     type: Number,
     default: 3,
   },
+  /**
+   * Determines the max height of the input element
+   * after which the content overflow and appears with the scroll.
+   * Defaults to 3.
+   */
+  styleVars: {
+    type: Object as PropType<StyleVariables>,
+    default: {
+      linkColor: "#6c757d",
+      fontColor: "#212529",
+      fontMutedColor: "#6c757d",
+      bgColor: "#ffffff",
+      codeBgColor: "#dee2e6",
+      boxShadow: "0 0.125em 0.25em rgba(0, 0, 0, 0.1)",
+      borderColor: "#dee2e6",
+      generalSpacing: "1em",
+      borderRadius: "0.25em",
+      baseFont: "1em",
+    },
+  },
 });
 
 onMounted(() => {
@@ -172,17 +205,16 @@ onMounted(() => {
   // Define CSS rules with new variables
   const cssRules = `
                 :root {
-                  --whimsy-primary: #007bff;
-                  --whimsy-secondary: #6c757d;
-                  --whimsy-font-color: #212529;
-                  --whimsy-font-muted-color: #6c757d;
-                  --whimsy-bg-color: #ffffff;
-                  --whimsy-code-bg-color: #dee2e6;
-                  --whimsy-box-shadow: 0 0.125em 0.25em rgba(0, 0, 0, 0.1);
-                  --whimsy-border-color: #dee2e6;
-                  --whimsy-general-spacing: 1em;
-                  --whimsy-border-radius: 0.25em;
-                  --whimsy-base-font: 1em;
+                  --whimsy-link-color: ${props.styleVars.linkColor};
+                  --whimsy-font-color: ${props.styleVars.fontColor};
+                  --whimsy-font-muted-color: ${props.styleVars.fontMutedColor};
+                  --whimsy-bg-color: ${props.styleVars.bgColor};
+                  --whimsy-code-bg-color: ${props.styleVars.codeBgColor};
+                  --whimsy-box-shadow: ${props.styleVars.boxShadow};
+                  --whimsy-border-color: ${props.styleVars.borderColor};
+                  --whimsy-general-spacing: ${props.styleVars.generalSpacing};
+                  --whimsy-border-radius: ${props.styleVars.borderRadius};
+                  --whimsy-base-font: ${props.styleVars.baseFont};
                 }
             `;
 

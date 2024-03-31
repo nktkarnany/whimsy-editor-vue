@@ -54,18 +54,42 @@ export default {
 
 ## Configuration Options
 
-| Prop              | Type           | Description                                                                                                        | Default              |
-| ----------------- | -------------- | ------------------------------------------------------------------------------------------------------------------ | -------------------- |
-| completionApi     | String         | The API route to use for the OpenAI completion API.                                                                | "/api/generate"      |
-| className         | String         | Additional classes to add to the editor container.                                                                 | "whimsy-editor"      |
-| defaultValue      | JSONContent    | The default value to use for the editor.                                                                           | defaultEditorContent |
-| format            | String         | Supported formats `json` & `html`                                                                                  | "json"               |
-| extensions        | Extension[]    | A list of extensions to use for the editor, in addition to the default whimsy extensions.                          | []                   |
-| editorProps       | EditorProps    | Props to pass to the underlying Tiptap editor, in addition to the default Whimsy editor props.                     | {}                   |
-| onUpdate          | Function       | A callback function that is called whenever the editor is updated.                                                 | () => {}             |
-| onDebouncedUpdate | Function       | A callback function that is called whenever the editor is updated, but only after the defined debounce duration.   | () => {}             |
-| debounceDuration  | Number         | The duration (in milliseconds) to debounce the onDebouncedUpdate callback.                                         | 750                  |
-| storageKey        | String \| Null | The key to use for storing the editor's value in local storage. For value `null` it doesn't save in local storage. | null                 |
+| Prop              | Type               | Description                                                                                                        | Default                        |
+| ----------------- | ------------------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------ |
+| completionApi     | String             | The API route to use for the OpenAI completion API.                                                                | "/api/generate"                |
+| className         | String             | Additional classes to add to the editor container.                                                                 | "whimsy-editor"                |
+| defaultValue      | JSONContent        | The default value to use for the editor.                                                                           | defaultEditorContent           |
+| format            | String             | Supported formats `json` & `html`                                                                                  | "json"                         |
+| extensions        | Extension[]        | A list of extensions to use for the editor, in addition to the default whimsy extensions.                          | []                             |
+| editorProps       | EditorProps        | Props to pass to the underlying Tiptap editor, in addition to the default Whimsy editor props.                     | {}                             |
+| onUpdate          | Function           | A callback function that is called whenever the editor is updated.                                                 | () => {}                       |
+| onDebouncedUpdate | Function           | A callback function that is called whenever the editor is updated, but only after the defined debounce duration.   | () => {}                       |
+| debounceDuration  | Number             | The duration (in milliseconds) to debounce the onDebouncedUpdate callback.                                         | 750                            |
+| storageKey        | String \| Null     | The key to use for storing the editor's value in local storage. For value `null` it doesn't save in local storage. | null                           |
+| placeholder       | String             | Placeholder text for the editor.                                                                                   | "Type something here... or ++" |
+| slashCommands     | SlashCommandItem[] | List of commands that can be accessed using the slash(/).                                                          | []                             |
+| lines             | Number             | Determines the default height of the input element.                                                                | 3                              |
+| maxLines          | Number             | Determines the max height of the input element after which the content overflows and appears with the scroll.      | 3                              |
+| styleVars         | StyleVariables     | Determines the styling variables for the editor.                                                                   | See below                      |
+
+**Default Style Variables:**
+
+```json
+{
+  "linkColor": "#6c757d",
+  "fontColor": "#212529",
+  "fontMutedColor": "#6c757d",
+  "bgColor": "#ffffff",
+  "codeBgColor": "#dee2e6",
+  "boxShadow": "0 0.125em 0.25em rgba(0, 0, 0, 0.1)",
+  "borderColor": "#dee2e6",
+  "generalSpacing": "1em",
+  "borderRadius": "0.25em",
+  "baseFont": "1em"
+}
+```
+
+This README section outlines the available configuration options for the Whimsy Editor Vue component, including additional props added to enhance user customization and experience.
 
 > **Note**: Ensure to define an API endpoint that matches the `completionApi` prop (default is `/api/generate`). This is needed for the AI autocompletions to work.
 
