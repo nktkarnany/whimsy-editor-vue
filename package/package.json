@@ -2,7 +2,7 @@
   "name": "whimsy-editor-vue",
   "version": "0.0.10",
   "author": "Ankit Karnany <ankitkarnany@gmail.com>",
-  "description": "A Rich Vue 3 component built using Tiptap, Vercel AI SDK & OpenAI",
+  "description": "A Rich Editor component built using Vue 3, Tiptap with AI integration using Vercel AI SDK & OpenAI",
   "type": "module",
   "files": [
     "dist"
