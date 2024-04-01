@@ -34,7 +34,7 @@ const Command = Extension.create({
   },
 });
 
-interface CommandProps {
+export interface CommandProps {
   editor: Editor;
   range: Range;
 }

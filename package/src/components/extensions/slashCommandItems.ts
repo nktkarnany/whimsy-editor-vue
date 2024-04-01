@@ -14,7 +14,7 @@ import {
   Sparkles,
 } from "lucide-vue-next";
 
-interface CommandProps {
+export interface CommandProps {
   editor: Editor;
   range: Range;
 }

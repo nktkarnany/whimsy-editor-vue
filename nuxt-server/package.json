@@ -10,12 +10,12 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@nuxt/devtools": "^1.0.8",
-    "nuxt": "^3.9.3"
+    "@nuxt/devtools": "1.0.8",
+    "nuxt": "3.9.3"
   },
   "dependencies": {
-    "ai": "^2.2.31",
-    "openai": "^4.26.0",
-    "whimsy-editor-vue": "^0.0.11"
+    "ai": "2.2.31",
+    "openai": "4.26.0",
+    "whimsy-editor-vue": "0.0.12"
   }
 }
