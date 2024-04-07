@@ -1,10 +1,10 @@
 # Whimsy Editor Vue
 
-Whimsy Editor Vue is a Vue 3 component for building WYSIWYG editors with AI-powered autocompletions.
+Whimsy Editor is a WYSIWYG editor component built on top of Tiptap and Open AI.
 
 ## Introduction
 
-Whimsy Editor is a simple WYSIWYG editor designed for Vue.js applications. With its AI-powered autocompletions, users can enhance their writing experience with intelligent suggestions.
+Whimsy Editor is a simple WYSIWYG editor designed for Vue.js applications.
 
 ## Installation
 
@@ -20,37 +20,32 @@ Then, integrate it into your Vue components as follows:
 
 ```vue
 <template>
-  <WhimsyEditorVue
+  <whimsy-editor-vue
     v-model="editorContent"
     :completionApi="yourCompletionApiEndpoint"
   />
 </template>
 
-<script>
+<script setup>
 import { ref } from "vue";
 import WhimsyEditorVue from "whimsy-editor-vue";
 import "whimsy-editor-vue/dist/style.css";
 
-export default {
-  components: {
-    WhimsyEditorVue,
-  },
-  setup() {
-    const editorContent = ref("");
-
-    return {
-      editorContent,
-    };
-  },
-};
+const editorContent = ref("");
 </script>
 ```
 
 ## Features
 
-- **WYSIWYG Editing:** Whimsy Editor provides a What-You-See-Is-What-You-Get interface for seamless content creation.
-- **AI-Powered Autocompletions:** Enhance your writing experience with intelligent autocompletion suggestions powered by AI.
-- **Customizable:** Customize the editor to suit your needs with additional extensions and configuration options.
+- **WYSIWYG Editing:** Whimsy Editor offers an intuitive What-You-See-Is-What-You-Get interface, ensuring that content creation is effortless and visually consistent.
+
+- **Customizable:** Customize the editor according to your unique requirements with a comprehensive range of extensions and styling options.
+
+- **Slash Commands:** Seamlessly integrate custom slash commands into the editor, enabling users to execute predefined actions or commands directly within the interface.
+
+- **Bubble Menu:** Utilize the built-in bubble menu or effortlessly integrate your own customized version, providing users with an intuitive interface for accessing essential editing tools and functionalities with ease.
+
+- **AI-Powered Autocompletions:** Elevate your writing process with AI-powered autocompletion suggestions that anticipate your next words or phrases based on context and language patterns, fostering productivity and enhancing the quality of your content.
 
 ## Configuration Options
 
@@ -72,7 +67,7 @@ export default {
 | maxLines          | Number             | Determines the max height of the input element after which the content overflows and appears with the scroll.      | 3                              |
 | styleVars         | StyleVariables     | Determines the styling variables for the editor.                                                                   | See below                      |
 
-**Default Style Variables:**
+### Default Style Variables:
 
 ```json
 {
@@ -89,11 +84,9 @@ export default {
 }
 ```
 
-This README section outlines the available configuration options for the Whimsy Editor Vue component, including additional props added to enhance user customization and experience.
-
 > **Note**: Ensure to define an API endpoint that matches the `completionApi` prop (default is `/api/generate`). This is needed for the AI autocompletions to work.
 
-## API Documentation
+<!-- ## API Documentation
 
 Whimsy Editor Vue exposes the following public methods and events for interaction:
 
@@ -105,7 +98,7 @@ Whimsy Editor Vue exposes the following public methods and events for interactio
 
 - `eventName`: Description of the event.
 
-For detailed usage examples, refer to the [API Documentation](#api-documentation) section in the README.
+For detailed usage examples, refer to the [API Documentation](#api-documentation) section in the README. -->
 
 ## Contribution Guidelines
 
