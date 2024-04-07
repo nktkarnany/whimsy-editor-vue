@@ -20,15 +20,12 @@ Then, integrate it into your Vue components as follows:
 
 ```vue
 <template>
-  <whimsy-editor-vue
-    v-model="editorContent"
-    :completionApi="yourCompletionApiEndpoint"
-  />
+  <Editor v-model="editorContent" :completionApi="yourCompletionApiEndpoint" />
 </template>
 
 <script setup>
 import { ref } from "vue";
-import WhimsyEditorVue from "whimsy-editor-vue";
+import { Editor } from "whimsy-editor-vue";
 import "whimsy-editor-vue/dist/style.css";
 
 const editorContent = ref("");
@@ -71,13 +68,23 @@ const editorContent = ref("");
 
 ```json
 {
-  "linkColor": "#6c757d",
-  "fontColor": "#212529",
-  "fontMutedColor": "#6c757d",
-  "bgColor": "#ffffff",
-  "codeBgColor": "#dee2e6",
-  "boxShadow": "0 0.125em 0.25em rgba(0, 0, 0, 0.1)",
-  "borderColor": "#dee2e6",
+  "mainBg": "#FFFFFF",
+  "textColor": "#333333",
+  "primaryAccent": "#FFB38B",
+  "secondaryAccent": "#8FC1E3",
+  "mutedBg": "#F5F5F5",
+  "mutedText": "#757575",
+  "mutedAccent": "#FFC107",
+  "mutedBorder": "#E0E0E0",
+  "borderColor": "#BDBDBD",
+  "boxShadow": "0 0.125em 0.25em rgba(0, 0, 0, 0.2)",
+  "codeBg": "#F9F9F9",
+  "codeText": "#212121",
+  "codeBorder": "#CCCCCC",
+  "quoteBg": "#EEEEEE",
+  "quoteText": "#616161",
+  "quoteBorder": "#BDBDBD",
+  "linkColor": "#6A89CC",
   "generalSpacing": "1em",
   "borderRadius": "0.25em",
   "baseFont": "1em"
