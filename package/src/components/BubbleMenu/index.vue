@@ -8,7 +8,7 @@
     }"
     class="bubble-menu"
   >
-    <NodeSelector :editor="editor" />
+    <NodeSelector ref="nodeSelectorRef" :editor="editor" />
     <LinkSelector ref="linkSelectorRef" :editor="editor" />
     <button
       v-for="(item, index) in items"
@@ -36,6 +36,7 @@ import {
 import NodeSelector from "./NodeSelector.vue";
 import LinkSelector from "./LinkSelector.vue";
 
+const nodeSelectorRef = ref<typeof NodeSelector | null>(null);
 const linkSelectorRef = ref<typeof LinkSelector | null>(null);
 
 const props = defineProps({
@@ -80,5 +81,6 @@ const items = [
 
 function onHidden() {
   linkSelectorRef.value?.closePopup();
+  nodeSelectorRef.value?.closePopup();
 }
 </script>

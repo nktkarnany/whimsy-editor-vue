@@ -1,7 +1,7 @@
 /* Whimsy Editor Styles */
 .whimsy-editor {
   position: relative;
-  background-color: var(--whimsy-bg-color);
+  background-color: var(--whimsy-main-background);
   box-shadow: var(--whimsy-box-shadow);
   border: 0.0625em solid var(--whimsy-border-color);
   padding: calc(var(--whimsy-general-spacing) * 1.25)
@@ -24,7 +24,7 @@
 .whimsy-editor .ProseMirror .is-empty::before {
   content: attr(data-placeholder);
   float: left;
-  color: var(--whimsy-font-muted-color);
+  color: var(--whimsy-muted-text);
   opacity: 0.3;
   pointer-events: none;
   height: 0;
@@ -88,9 +88,11 @@
   line-height: 1.7777778;
   margin-top: 1.6666667em;
   margin-bottom: 1.6666667em;
-  padding-left: 1em;
-  border: 0.0625em solid var(--whimsy-font-muted-color);
-  border-left-width: 0.25em;
+  padding: 0.01em 1em;
+  background-color: var(--whimsy-quote-background);
+  color: var(--whimsy-quote-text);
+  border-left: 0.25em solid var(--whimsy-quote-border);
+  border-radius: var(--whimsy-border-radius);
 }
 
 /* Code Block Styles */
@@ -101,14 +103,16 @@
   line-height: 1.25em;
 
   &.code-block {
-    background-color: var(--whimsy-code-bg-color);
-    color: var(--whimsy-font-color);
+    background-color: var(--whimsy-code-background);
+    border: 1px solid var(--whimsy-code-border);
+    color: var(--whimsy-code-text);
     padding: var(--whimsy-general-spacing);
   }
 
   &.code {
-    background-color: var(--whimsy-code-bg-color);
-    color: var(--whimsy-font-color);
+    background-color: var(--whimsy-code-background);
+    border: 1px solid var(--whimsy-code-border);
+    color: var(--whimsy-code-text);
     padding: calc(var(--whimsy-general-spacing) * 0.5);
   }
 }
@@ -160,23 +164,23 @@ ul[data-type="taskList"] li > label {
 ul[data-type="taskList"] li > label input[type="checkbox"] {
   -webkit-appearance: none;
   appearance: none;
-  background-color: var(--whimsy-bg-color);
+  background-color: var(--whimsy-main-background);
   margin: 0;
   cursor: pointer;
   width: 1.2em;
   height: 1.2em;
   position: relative;
-  border: 2px solid var(--whimsy-font-muted-color);
+  border: 2px solid var(--whimsy-muted-text);
   margin-right: 0.3em;
   display: grid;
   place-content: center;
 
   &:hover {
-    background-color: var(--whimsy-gray-200);
+    border-color: var(--whimsy-text-color);
   }
 
   &:active {
-    background-color: var(--whimsy-gray-300);
+    border-color: var(--whimsy-text-color);
   }
 
   &::before {
@@ -196,36 +200,38 @@ ul[data-type="taskList"] li > label input[type="checkbox"] {
 }
 
 ul[data-type="taskList"] li[data-checked="true"] > div > p {
-  color: var(--whimsy-font-muted-color); /* Changed color to font-muted-color */
+  color: var(--whimsy-muted-text); /* Changed color to font-muted-color */
   text-decoration: line-through;
   text-decoration-thickness: 2px;
 }
 
 .whimsy-btn {
-  padding: var(--whimsy-general-spacing);
+  padding: calc(var(--whimsy-general-spacing) * 0.75);
   border: 0;
   cursor: pointer;
   outline: none;
-  background-color: var(--whimsy-bg-color);
+  background-color: var(--whimsy-main-background);
   display: flex;
+  align-items: center;
+  gap: calc(var(--whimsy-general-spacing) * 0.5);
 
   &:hover {
-    background-color: var(--whimsy-gray-300);
+    background-color: var(--whimsy-primary-accent);
   }
 
   &.active {
-    background-color: var(--whimsy-gray-300);
+    background-color: var(--whimsy-primary-accent);
   }
 }
 
 .menu {
   display: flex;
   flex-direction: column;
-  background-color: var(--whimsy-bg-color);
+  background-color: var(--whimsy-main-background);
   box-shadow: var(--whimsy-box-shadow);
   border: 0.0625em solid var(--whimsy-border-color);
   border-radius: var(--whimsy-border-radius);
-  height: 200px;
+  height: 350px;
   overflow: auto;
 
   &__item {
@@ -236,7 +242,7 @@ ul[data-type="taskList"] li[data-checked="true"] > div > p {
       calc(var(--whimsy-general-spacing) * 0.4166);
 
     &.active {
-      background-color: var(--whimsy-code-bg-color);
+      background-color: var(--whimsy-primary-accent);
     }
 
     &-content {
@@ -252,7 +258,7 @@ ul[data-type="taskList"] li[data-checked="true"] > div > p {
 .bubble-menu {
   display: flex;
   align-items: center;
-  background-color: var(--whimsy-bg-color);
+  background-color: var(--whimsy-main-background);
   box-shadow: var(--whimsy-box-shadow);
   border: 0.0625em solid var(--whimsy-border-color);
   border-radius: var(--whimsy-border-radius);
@@ -265,10 +271,11 @@ ul[data-type="taskList"] li[data-checked="true"] > div > p {
     display: flex;
     flex-direction: column;
     position: absolute;
-    background-color: var(--whimsy-bg-color);
+    background-color: var(--whimsy-main-background);
     box-shadow: var(--whimsy-box-shadow);
     border: 0.0625em solid var(--whimsy-border-color);
     border-radius: var(--whimsy-border-radius);
+    width: 175px;
   }
 }
 
@@ -282,7 +289,7 @@ ul[data-type="taskList"] li[data-checked="true"] > div > p {
     align-items: center;
     width: 100%;
     left: 0;
-    background-color: var(--whimsy-bg-color);
+    background-color: var(--whimsy-main-background);
     box-shadow: var(--whimsy-box-shadow);
     border: 0.0625em solid var(--whimsy-border-color);
     border-radius: var(--whimsy-border-radius);
@@ -290,7 +297,7 @@ ul[data-type="taskList"] li[data-checked="true"] > div > p {
     &-input {
       flex: 1;
       font-size: 0.875rem;
-      background-color: var(--whimsy-bg-color);
+      background-color: var(--whimsy-main-background);
       outline: none;
     }
   }

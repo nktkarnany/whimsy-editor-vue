@@ -48,13 +48,23 @@ import { getPrevText } from "../lib/editor";
 type Format = "html" | "json";
 
 type StyleVariables = {
-  linkColor: string;
-  fontColor: string;
-  fontMutedColor: string;
-  bgColor: string;
-  codeBgColor: string;
-  boxShadow: string;
+  mainBg: string;
+  textColor: string;
+  primaryAccent: string;
+  secondaryAccent: string;
+  mutedBg: string;
+  mutedText: string;
+  mutedAccent: string;
+  mutedBorder: string;
   borderColor: string;
+  boxShadow: string;
+  codeBg: string;
+  codeText: string;
+  codeBorder: string;
+  quoteBg: string;
+  quoteText: string;
+  quoteBorder: string;
+  linkColor: string;
   generalSpacing: string;
   borderRadius: string;
   baseFont: string;
@@ -184,13 +194,23 @@ const props = defineProps({
   styleVars: {
     type: Object as PropType<StyleVariables>,
     default: {
-      linkColor: "#6c757d",
-      fontColor: "#212529",
-      fontMutedColor: "#6c757d",
-      bgColor: "#ffffff",
-      codeBgColor: "#dee2e6",
-      boxShadow: "0 0.125em 0.25em rgba(0, 0, 0, 0.1)",
-      borderColor: "#dee2e6",
+      mainBg: "#FFFFFF",
+      textColor: "#333333",
+      primaryAccent: "#FFB38B",
+      secondaryAccent: "#8FC1E3",
+      mutedBg: "#F5F5F5",
+      mutedText: "#757575",
+      mutedAccent: "#FFC107",
+      mutedBorder: "#E0E0E0",
+      borderColor: "#BDBDBD",
+      boxShadow: "0 0.125em 0.25em rgba(0, 0, 0, 0.2)",
+      codeBg: "#F9F9F9",
+      codeText: "#212121",
+      codeBorder: "#CCCCCC",
+      quoteBg: "#EEEEEE",
+      quoteText: "#616161",
+      quoteBorder: "#BDBDBD",
+      linkColor: "#6A89CC",
       generalSpacing: "1em",
       borderRadius: "0.25em",
       baseFont: "1em",
@@ -204,19 +224,42 @@ onMounted(() => {
 
   // Define CSS rules with new variables
   const cssRules = `
-                :root {
-                  --whimsy-link-color: ${props.styleVars.linkColor};
-                  --whimsy-font-color: ${props.styleVars.fontColor};
-                  --whimsy-font-muted-color: ${props.styleVars.fontMutedColor};
-                  --whimsy-bg-color: ${props.styleVars.bgColor};
-                  --whimsy-code-bg-color: ${props.styleVars.codeBgColor};
-                  --whimsy-box-shadow: ${props.styleVars.boxShadow};
-                  --whimsy-border-color: ${props.styleVars.borderColor};
-                  --whimsy-general-spacing: ${props.styleVars.generalSpacing};
-                  --whimsy-border-radius: ${props.styleVars.borderRadius};
-                  --whimsy-base-font: ${props.styleVars.baseFont};
-                }
-            `;
+  /* Primary Colors */
+  :root {
+    --whimsy-main-background: ${props.styleVars.mainBg};
+    --whimsy-text-color: ${props.styleVars.textColor};
+    --whimsy-primary-accent: ${props.styleVars.primaryAccent};
+    --whimsy-secondary-accent: ${props.styleVars.secondaryAccent};
+
+    /* Muted Colors */
+    --whimsy-muted-background: ${props.styleVars.mutedBg};
+    --whimsy-muted-text: ${props.styleVars.mutedText};
+    --whimsy-muted-accent: ${props.styleVars.mutedAccent};
+    --whimsy-muted-border: ${props.styleVars.mutedBorder};
+
+    /* Borders & Shadows */
+    --whimsy-border-color: ${props.styleVars.borderColor};
+    --whimsy-box-shadow: ${props.styleVars.boxShadow};
+
+    /* Code Blocks */
+    --whimsy-code-background: ${props.styleVars.codeBg};
+    --whimsy-code-text: ${props.styleVars.codeText};
+    --whimsy-code-border: ${props.styleVars.codeBorder};
+
+    /* Quotes */
+    --whimsy-quote-background: ${props.styleVars.quoteBg};
+    --whimsy-quote-text: ${props.styleVars.quoteText};
+    --whimsy-quote-border: ${props.styleVars.quoteBorder};
+
+    /* Link Color */
+    --whimsy-link-color: ${props.styleVars.linkColor};
+
+    /* General */
+    --whimsy-general-spacing: ${props.styleVars.generalSpacing};
+    --whimsy-border-radius: ${props.styleVars.borderRadius};
+    --whimsy-base-font: ${props.styleVars.baseFont};
+  }
+`;
 
   // Set the CSS rules to the <style> element
   styleElement.textContent = cssRules;

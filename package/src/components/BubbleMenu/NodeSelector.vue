@@ -1,7 +1,9 @@
 <template>
   <div class="node-selector">
-    <button class="whimsy-btn">{{ activeItem?.name }} <ChevronDown /></button>
-    <div class="node-selector__menu">
+    <button class="whimsy-btn" @click="isOpen = !isOpen">
+      {{ activeItem?.name }} <ChevronDown />
+    </button>
+    <div v-if="isOpen" class="node-selector__menu">
       <button
         v-for="(item, index) in items"
         :key="index"
@@ -22,7 +24,7 @@
 </template>
 
 <script setup lang="ts">
-import { PropType, computed } from "vue";
+import { PropType, computed, ref } from "vue";
 
 import { Editor } from "@tiptap/core";
 import {
@@ -44,6 +46,14 @@ const props = defineProps({
     required: true,
   },
 });
+
+const isOpen = ref(false);
+
+defineExpose({ closePopup });
+
+function closePopup() {
+  isOpen.value = false;
+}
 
 const items = [
   {
